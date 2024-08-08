@@ -3,18 +3,18 @@
 </script>
 
 <template>
-    <main>
-        <h1>
+    <main class="d-flex flex-column align-items-lg-end px-5 mt-5 text-lg-end">
+        <h1 class="display-2 fw-semibold">
             Welcome to <br>
             My Portfolio
         </h1>
-        <p>
+        <p class="">
             I'm Awan, a passionate Full Stack Web Developer dedicated to crafting dynamic and responsive web applications. I thrive on tackling coding challenges and constantly expanding my knowledge to bring innovative ideas to life. 
         </p>
-        <button>Get in touch</button>
+        <button class="btn mt-5">Get in touch</button>
 
-        <img src="" alt="ilustration picture">
     </main>
+    <img src="" alt="ilustration picture">
     <section class="portfolio">
         <h2>Portfolio</h2>
         <div class="card">
@@ -37,3 +37,27 @@
         <p>Copyright Yodi Irawan @ 2024</p>
     </footer>
 </template>
+
+<style scoped>
+
+main p {
+    width: 60%;
+}
+
+main button {
+    background-color: #1B2C45;
+    color: #F8F4F3;
+}
+
+main button:hover {
+    border: 2px solid #1B2C45;
+    background-color: #F8F4F3;
+    color: #1B2C45;
+}
+
+/* @media (max-width: 576px) { 
+    main p {
+    width: 100%;
+}
+} */
+</style>
