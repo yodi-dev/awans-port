@@ -3,7 +3,7 @@ import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="row justify-content-end g-3">
+  <div class="row justify-content-end g-0">
     <div class="col-lg-12 col-5">
       <header class="container mt-5">
         <div class="d-flex justify-content-end text-end align-items-center">

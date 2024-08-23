@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div class="row">
+  <div class="row g-0">
     <div class="col-lg-12 col-12 text-center text-lg-end">
       <main class="container mt-5">
         <div class="row">
@@ -26,7 +26,7 @@
       </main>
     </div>
   </div>
-  <div class="row">
+  <div class="row g-0">
     <div class="col-12">
       <section class="portfolio py-5">
         <div class="container">
@@ -148,7 +148,7 @@
       </section>
     </div>
   </div>
-  <div class="row">
+  <div class="row g-0">
     <div class="col-12">
       <section class="about">
         <div class="container py-5">
