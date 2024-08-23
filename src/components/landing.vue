@@ -51,7 +51,7 @@
                     employee scheduling, and financial reporting with three user
                     levels: doctor, staff, and admin.
                   </p>
-                  <a class="btn btn-sm px-3" href="">Dive in</a>
+                  <!-- <a class="btn btn-sm px-3" href="">Dive in</a> -->
                 </div>
               </div>
             </div>
@@ -75,7 +75,7 @@
                     Laravel and Bootstrap. This application includes all the
                     essential features of a standard library management system.
                   </p>
-                  <a class="btn btn-sm px-3" href="">Dive in</a>
+                  <!-- <a class="btn btn-sm px-3" href="">Dive in</a> -->
                 </div>
               </div>
             </div>
@@ -95,7 +95,7 @@
                     A practice project using Vue.js for the frontend, displaying
                     data from an API. The UI is styled with vanilla CSS.
                   </p>
-                  <a class="btn btn-sm px-3" href="">Dive in</a>
+                  <!-- <a class="btn btn-sm px-3" href="">Dive in</a> -->
                 </div>
               </div>
             </div>
@@ -188,26 +188,42 @@
         <div class="row g-0 mt-5 skill justify-content-center text-center">
           <div class="col-12 col-lg-3">
             <div class="tag-group py-3 d-flex flex-column flex">
-              <div class="tag mb-2">
+              <a
+                href="https://maps.app.goo.gl/vC4HZvJt1KhKnopj6"
+                target="_blank"
+                class="tag mb-2 text-light link-underline link-underline-opacity-0"
+              >
                 <i class="fa-solid fa-house me-2"></i
                 ><span>Umbulharjo, Yogyakarta</span>
-              </div>
-              <div class="tag">
+              </a>
+              <a
+                href="mailto:irawanyodi10@gmail.com"
+                target="_blank"
+                class="tag text-light link-underline link-underline-opacity-0"
+              >
                 <i class="fa-regular fa-envelope me-2"></i
                 ><span>irawanyodi10@gmail.com</span>
-              </div>
+              </a>
             </div>
           </div>
           <div class="col-6 col-lg-3">
             <div class="tag-group py-3 d-flex flex-column flex">
-              <div class="tag mb-2">
+              <a
+                href="https://www.linkedin.com/in/yodi-irawan/"
+                target="_blank"
+                class="tag mb-2 text-light link-underline link-underline-opacity-0"
+              >
                 <i class="fa-brands fa-linkedin-in me-2"></i>
                 <span>LinkedIn</span>
-              </div>
-              <div class="tag">
+              </a>
+              <a
+                href="https://wa.me/6282279696793"
+                target="_blank"
+                class="tag text-light link-underline link-underline-opacity-0"
+              >
                 <i class="fa-brands fa-whatsapp me-2"></i
                 ><span>0822 7969 6793</span>
-              </div>
+              </a>
             </div>
           </div>
           <div class="col-6 col-lg-3">
@@ -215,10 +231,14 @@
               <div class="tag mb-2">
                 <i class="fa-regular fa-heart me-2"></i><span>Musik, Game</span>
               </div>
-              <div class="tag">
+              <a
+                href="https://www.instagram.com/awan.espede/"
+                target="_blank"
+                class="tag text-light link-underline link-underline-opacity-0"
+              >
                 <i class="fa-brands fa-instagram me-2"></i
                 ><span>@awan.espede</span>
-              </div>
+              </a>
             </div>
           </div>
           <footer class="mb-3 pt-3 border-top">
