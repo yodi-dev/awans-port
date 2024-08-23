@@ -31,16 +31,16 @@
                 class="flex-grow-1 ms-2 align-items-center justify-conten-center"
               >
                 <h3 class="m-0 fw-semibold lh-1">SIM Klinik</h3>
-                <p class="m-0 lh-1">Laravel, Bootstrap, MySQL</p>
+                <span class="m-0 lh-1">Laravel, Bootstrap, MySQL</span>
               </div>
             </div>
             <div class="card-body text-center">
-              <p class="fw-light text-start">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, dolores saepe facilis, maiores sed perspiciatis
-                optio explicabo autem aspernatur velit magni enim, quia libero
-                aperiam officiis nobis similique doloribus fuga assumenda nemo
-                atque sequi.
+              <p class="fw-light">
+                A final project for my Bachelor's degree, developed for a clinic
+                in Gunung Kidul. Built with Laravel and Bootstrap, this system
+                simplifies the management of patient visit data, employee
+                scheduling, and financial reporting with three user levels:
+                doctor, staff, and admin.
               </p>
               <a class="btn btn-sm px-3" href="">Dive in</a>
             </div>
@@ -49,19 +49,19 @@
         <div class="col-4">
           <div class="card">
             <div class="card-header d-flex align-items-center">
-              <img src="../../public/logo-kam.png" alt="icon of project" />
+              <img src="../../public/logo-perpus.png" alt="icon of project" />
               <div
-                class="flex-grow-1 ms-2 align-items-center justify-conten-center"
+                class="flex-grow-1 ms-3 align-items-center justify-conten-center"
               >
-                <h3 class="m-0 lh-1">SIM Klinik</h3>
-                <p class="m-0 lh-1">Laravel, Bootstrap, MySQL</p>
+                <h3 class="m-0 lh-1 fw-semibold">Perpus App</h3>
+                <span class="m-0 lh-1">Laravel, Bootstrap, MySQL</span>
               </div>
             </div>
             <div class="card-body text-center">
-              <p class="fw-light text-start">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, dolores saepe facilis, maiores sed perspiciatis
-                optio explicabo autem aspernatur velit magni enim.
+              <p class="fw-light">
+                A final project for a web development bootcamp, built with
+                Laravel and Bootstrap. This application includes all the
+                essential features of a standard library management system.
               </p>
               <a class="btn btn-sm px-3" href="">Dive in</a>
             </div>
@@ -70,21 +70,18 @@
         <div class="col-4">
           <div class="card">
             <div class="card-header d-flex align-items-center">
-              <img src="../../public/logo-kam.png" alt="icon of project" />
+              <img src="../../public/logo-shop.png" alt="icon of project" />
               <div
-                class="flex-grow-1 ms-2 align-items-center justify-conten-center"
+                class="flex-grow-1 ms-3 align-items-center justify-conten-center"
               >
-                <h3 class="m-0 lh-1">SIM Klinik</h3>
-                <p class="m-0 lh-1">Laravel, Bootstrap, MySQL</p>
+                <h3 class="m-0 fw-semibold lh-1">POS App</h3>
+                <span class="m-0 lh-1">Vue JS, Vanilla CSS</span>
               </div>
             </div>
             <div class="card-body text-center">
-              <p class="fw-light text-start">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, dolores saepe facilis, maiores sed perspiciatis
-                optio explicabo autem aspernatur velit magni enim, quia libero
-                aperiam officiis nobis similique doloribus fuga assumenda nemo
-                atque sequi.
+              <p class="fw-light">
+                A practice project using Vue.js for the frontend, displaying
+                data from an API. The UI is styled with vanilla CSS.
               </p>
               <a class="btn btn-sm px-3" href="">Dive in</a>
             </div>
@@ -92,96 +89,121 @@
         </div>
       </div>
     </div>
-    <div class="row g-0 mt-5 skill justify-content-center text-center">
+    <div class="row g-0 mt-5 skill justify-content-center">
       <div class="col-3">
-        <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+        <div class="tag-group py-3 d-flex flex-column align-items-center">
+          <div class="tag mb-2">
+            <i class="fa-brands fa-css3-alt me-2"></i><span>CSS</span>
+          </div>
+          <div class="tag mb-2">
+            <i class="fa-brands fa-html5 me-2"></i><span>HTML</span>
+          </div>
+
+          <div class="tag mb-2">
+            <i class="fa-brands fa-js me-2"></i><span>JavaScript</span>
+          </div>
         </div>
       </div>
       <div class="col-3">
-        <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+        <div class="tag-group py-3 d-flex align-items-center flex-column">
+          <div class="tag mb-2">
+            <i class="fa-brands fa-php me-2"></i><span>PHP</span>
+          </div>
+          <div class="tag mb-2">
+            <i class="fa-solid fa-database me-2"></i><span>MySQL</span>
+          </div>
+          <div class="tag mb-2">
+            <i class="fa-brands fa-bootstrap me-2"></i><span>Bootstrap</span>
+          </div>
         </div>
       </div>
       <div class="col-3">
-        <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+        <div class="tag-group py-3 align-items-center d-flex flex-column">
+          <div class="tag mb-2">
+            <i class="fa-brands fa-vuejs me-2"></i><span>Vue Js</span>
+          </div>
+          <div class="tag mb-2">
+            <i class="fa-brands fa-laravel me-2"></i><span>Laravel</span>
+          </div>
+
+          <div class="tag mb-2">
+            <i class="fa-solid fa-fire me-2"></i><span>CodeIgniter</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
   <section class="about">
     <div class="container py-5">
-      <h2 class="display-4 mb-4 fw-normal text-center">About Me</h2>
       <div class="row">
-        <div class="col-lg-4">
+        <div class="col-lg-4 d-flex align-items-end justify-content-center">
           <img src="/public/profil.jpeg" alt="photo profil" />
         </div>
         <div class="col-lg-8">
+          <h2 class="display-5 mb-4 fw-semibold">About Me</h2>
           <p class="fw-light">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam
-            labore nulla eligendi voluptatum ratione animi cupiditate nisi
-            consequatur officiis repellendus. Voluptatum earum autem sit quas?
-            Nam nisi, amet rerum debitis harum excepturi, enim quidem sunt
-            molestias est, recusandae iure voluptas! Quibusdam at voluptas
-            magnam, labore, minima itaque quam ex accusantium atque aliquid
-            facilis delectus sit, amet sunt quae voluptatem error accusamus
-            harum natus? Ipsam commodi tempora perferendis modi, nostrum aliquam
-            itaque accusamus voluptatibus alias id perspiciatis quisquam minus
-            tempore molestias dolorum eaque? Eum reprehenderit ullam iste rem
-            sed corporis quo ipsam delectus distinctio cupiditate in fuga ipsum
-            magnam vel repellendus architecto quisquam vitae, assumenda nam?
+            I was born and raised on the island of Sumatra, and my passion for
+            technology began during my time in vocational high school, where I
+            studied Computer and Network Engineering. Toward the end of my
+            studies, I became more interested in web development, which led me
+            to pursue a degree in Information Technology Education, particularly
+            because it included web development courses.
           </p>
           <p class="fw-light">
-            Maiores reprehenderit quisquam impedit nihil labore ex maxime
-            nostrum facilis porro incidunt pariatur dicta enim quia dignissimos
-            exercitationem in sapiente, ipsum commodi blanditiis numquam alias
-            ad iusto inventore deserunt? Incidunt eos corporis in quam, ipsam
-            sint, ex possimus distinctio quidem numquam dolores? Consectetur hic
-            in porro et necessitatibus nulla deleniti unde dolore tenetur.
-            Perferendis odit, blanditiis eveniet ab quia quisquam iusto
-            aspernatur quae unde eius numquam error repellat aliquid saepe
-            mollitia totam optio id. Architecto ullam error culpa repellat esse
-            minus, odit accusamus, quaerat, saepe tempore dolor officia
-            delectus? Nobis at nostrum sit quam non?
+            I began focusing on web development during my final years of
+            college, where I gained a solid understanding of various aspects of
+            the field, including requirements analysis, development
+            methodologies, data structures, basic programming, algorithms,
+            decision support systems, and more. Alongside my studies, I also
+            took several courses and training programs in web development.
           </p>
-          <div class="contact"><i></i>Umbulharjo, Yogyakarta</div>
+          <p class="fw-light">
+            Now, having recently completed my Bachelor's degree, I am actively
+            seeking job opportunities in the web development industry.
+          </p>
         </div>
       </div>
     </div>
     <div class="row g-0 mt-5 skill justify-content-center text-center">
       <div class="col-3">
         <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+          <div class="tag mb-2">
+            <i class="fa-solid fa-house me-2"></i
+            ><span>Umbulharjo, Yogyakarta</span>
+          </div>
+          <div class="tag">
+            <i class="fa-regular fa-envelope me-2"></i
+            ><span>irawanyodi10@gmail.com</span>
+          </div>
         </div>
       </div>
       <div class="col-3">
         <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+          <div class="tag mb-2">
+            <i class="fa-brands fa-linkedin-in me-2"></i>
+            <span>LinkedIn</span>
+          </div>
+          <div class="tag">
+            <i class="fa-brands fa-whatsapp me-2"></i
+            ><span>0822 7969 6793</span>
+          </div>
         </div>
       </div>
       <div class="col-3">
         <div class="tag-group py-3 d-flex flex-column flex">
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
-          <div class="tag mb-2"><i>i</i><span>HTML</span></div>
+          <div class="tag mb-2">
+            <i class="fa-regular fa-heart me-2"></i><span>Musik, Game</span>
+          </div>
+          <div class="tag">
+            <i class="fa-brands fa-instagram me-2"></i><span>@awan.espede</span>
+          </div>
         </div>
       </div>
+      <footer class="mb-3 pt-3 border-top">
+        <p class="m-0 text-center">Copyright Yodi Irawan @ 2024</p>
+      </footer>
     </div>
   </section>
-  <footer class="container d-flex justify-content-center align-items-center">
-    <p class="m-0">Copyright Yodi Irawan @ 2024</p>
-  </footer>
 </template>
 
 <style scoped>
@@ -216,6 +238,12 @@ main img {
   height: 20rem;
 }
 
+.portfolio p {
+  text-indent: 2em;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
 .card img {
   width: 5rem;
 }
@@ -229,19 +257,16 @@ main img {
 }
 
 .about img {
-  width: 20rem;
+  width: 18rem;
   border-radius: 15rem;
 }
+
 .about p {
   text-align: justify;
 }
 
 .about .skill {
   color: #dbd9dc;
-}
-
-footer {
-  height: 5rem;
 }
 
 @media (max-width: 576px) {
