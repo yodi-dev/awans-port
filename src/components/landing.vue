@@ -10,8 +10,8 @@
           </div>
           <div class="col-lg-8">
             <h1 class="display-2 fw-semibold">
-              Welcome to <br />
-              My Portfolio
+              <span class="fw-medium display-3">Welcome to</span> <br />
+              MY PORTFOLIO
             </h1>
             <p class="text-lg-end fw-light">
               I'm Awan, a passionate Full Stack Web Developer dedicated to
