@@ -11,12 +11,15 @@
             <div class="col card p-3 m-2">
               <h4 class="">{{ article.title }}</h4>
               <p>{{ article.description }}</p>
-              <a
-                :href="article.url"
-                target="_blank"
-                class="link-dark link-underline-primary"
-                >Read more</a
-              >
+              <p>
+                {{ article.author }} -
+                <a
+                  :href="article.url"
+                  target="_blank"
+                  class="link-dark link-underline-primary"
+                  >Read more</a
+                >
+              </p>
             </div>
           </div>
         </div>
@@ -42,6 +45,8 @@ export default {
       fetch(url)
         .then((response) => response.json())
         .then((data) => {
+          console.log(data.articles);
+
           this.articles = data.articles;
           this.loading = false;
         })
