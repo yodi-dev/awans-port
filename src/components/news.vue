@@ -7,19 +7,33 @@
         <div v-if="error">{{ error }}</div>
 
         <div class="row row-cols-1 row-cols-lg-2">
-          <div v-for="article in articles" :key="article.title">
+          <div v-for="(post, index) in data.posts" :key="index">
             <div class="col card p-3 m-2">
-              <h4 class="">{{ article.title }}</h4>
-              <p>{{ article.description }}</p>
-              <p>
-                {{ article.author }} -
-                <a
-                  :href="article.url"
-                  target="_blank"
-                  class="link-dark link-underline-primary"
-                  >Read more</a
-                >
+              <!-- Thumbnail image -->
+              <img
+                :src="post.thumbnail"
+                alt="Thumbnail"
+                class="img-fluid mb-3"
+              />
+
+              <!-- Title -->
+              <h4 class="">{{ post.title }}</h4>
+
+              <!-- Description -->
+              <p>{{ post.description }}</p>
+
+              <!-- Published date -->
+              <p class="text-muted">
+                {{ formatDate(post.pubDate) }}
               </p>
+
+              <!-- Read more link -->
+              <a
+                :href="post.link"
+                target="_blank"
+                class="link-dark link-underline-primary"
+                >Read more</a
+              >
             </div>
           </div>
         </div>
@@ -29,38 +43,49 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   data() {
     return {
-      articles: [],
+      data: {
+        posts: [],
+      },
       loading: false,
       error: null,
     };
   },
   methods: {
-    fetchNews() {
-      this.loading = true;
-      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
-      const url =
-        "https://newsapi.org/v2/top-headlines?country=id&apiKey=01fc5cfe76454309b69abcbbd3bbfc03";
-      fetch(proxyUrl + url)
-        .then((response) => response.json())
-        .then((data) => {
-          // console.log(data.articles);
+    async fetchNews() {
+      try {
+        this.loading = true;
+        const response = await axios.get(
+          "https://api-berita-indonesia.vercel.app/cnn/terbaru/"
+        );
+        // Menyimpan data posts
+        this.data.posts = response.data.data.posts;
+      } catch (error) {
+        this.error = "Failed to fetch news";
+        console.error("Error fetching data:", error);
+      } finally {
+        this.loading = false;
+      }
+    },
+    formatDate(dateString) {
+      if (!dateString) return "No Date Available"; // Handle case jika tanggal kosong
 
-          this.articles = data.articles;
-          this.loading = false;
-        })
-        .catch((error) => {
-          this.error = "Failed to fetch news";
-          this.loading = false;
-        });
+      // Log dateString untuk melihat format yang diterima
+      // console.log("Date string:", dateString);
+
+      const date = new Date(dateString);
+      if (isNaN(date)) return "Invalid Date"; // Handle invalid date
+
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return date.toLocaleDateString(undefined, options);
     },
   },
   mounted() {
     this.fetchNews();
-    // Poll the API every 10 seconds
-    setInterval(this.fetchNews, 60000);
   },
 };
 </script>
