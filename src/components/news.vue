@@ -40,12 +40,13 @@ export default {
   methods: {
     fetchNews() {
       this.loading = true;
+      const proxyUrl = "https://cors-anywhere.herokuapp.com/";
       const url =
         "https://newsapi.org/v2/top-headlines?country=id&apiKey=01fc5cfe76454309b69abcbbd3bbfc03";
-      fetch(url)
+      fetch(proxyUrl + url)
         .then((response) => response.json())
         .then((data) => {
-          console.log(data.articles);
+          // console.log(data.articles);
 
           this.articles = data.articles;
           this.loading = false;
