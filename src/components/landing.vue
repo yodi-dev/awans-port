@@ -20,7 +20,12 @@
               to bring innovative ideas to life. Let's build something amazing
               together!
             </p>
-            <button class="btn mt-5">Get in touch</button>
+            <a
+              href="mailto:irawanyodi10@gmail.com"
+              target="_blank"
+              class="btn mt-5"
+              >Get in touch</a
+            >
           </div>
         </div>
       </main>
@@ -251,13 +256,13 @@
 </template>
 
 <style scoped>
-main button,
+main a,
 .portfolio .btn {
   background-color: #1b2c45;
   color: #f8f4f3;
 }
 
-main button:hover {
+main a:hover {
   border: 2px solid #1b2c45;
   background-color: #f8f4f3;
   color: #1b2c45;
