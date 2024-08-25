@@ -47,7 +47,7 @@ img {
   right: 0;
   border-radius: 6px 6px 0 0;
   height: 9rem;
-  background-color: #7d8abc;
+  background-color: #384868;
   padding: 10px 0;
   z-index: 1000;
 }
