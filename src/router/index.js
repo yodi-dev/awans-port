@@ -1,7 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
-// import HomeView from '../views/HomeView.vue'
 import Landing from '@/components/landing.vue'
 import Port from '@/components/portfolio.vue'
+import News from '@/components/news.vue'
+import Blog from '@/components/blog.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -10,6 +11,16 @@ const router = createRouter({
       path: '/',
       name: 'Landing',
       component: Landing
+    },
+    {
+      path: '/news',
+      name: 'News',
+      component: News
+    },
+    {
+      path: '/blog',
+      name: 'Blog',
+      component: Blog
     },
     {
       path: '/portfolio',
