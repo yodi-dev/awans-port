@@ -157,11 +157,11 @@
     <div class="col-12">
       <section class="about">
         <div class="container py-5">
-          <div class="row">
+          <div class="row justify-content-center">
             <div class="col-lg-4 d-flex align-items-end justify-content-center">
               <img src="/public/profil.jpeg" alt="photo profil" />
             </div>
-            <div class="col-lg-8">
+            <div class="col-lg-8 col-11">
               <h2 class="display-5 text-center text-lg-start my-4 fw-semibold">
                 About Me
               </h2>
@@ -318,7 +318,7 @@ main img {
   color: #dbd9dc;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 991.98px) {
   main img {
     display: none;
   }
