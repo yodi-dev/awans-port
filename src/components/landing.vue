@@ -237,17 +237,17 @@
                 <i class="fa-regular fa-heart me-2"></i><span>Musik, Game</span>
               </div>
               <a
-                href="https://www.instagram.com/awan.espede/"
+                href="https://www.instagram.com/awan.lite/"
                 target="_blank"
                 class="tag text-light link-underline link-underline-opacity-0"
               >
                 <i class="fa-brands fa-instagram me-2"></i
-                ><span>@awan.espede</span>
+                ><span>@awan.lite</span>
               </a>
             </div>
           </div>
           <footer class="mb-3 pt-3 border-top">
-            <p class="m-0 text-center">Copyright Yodi Irawan @ 2024</p>
+            <p class="m-0 text-center">Created with &#10084; By Yodi Irawan | 2025</p>
           </footer>
         </div>
       </section>

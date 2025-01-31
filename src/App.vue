@@ -23,9 +23,9 @@ import { RouterLink, RouterView } from "vue-router";
       <li>
         <a title="News" href="/news"><i class="fa-solid fa-newspaper"></i></a>
       </li>
-      <li>
+      <!-- <li>
         <a title="Blog" href="/blog"><i class="fa-solid fa-blog"></i></a>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </template>
@@ -46,9 +46,9 @@ img {
   bottom: 0;
   right: 0;
   border-radius: 6px 6px 0 0;
-  height: 9rem;
+  height: 6rem;
   background-color: #384868;
-  padding: 10px 0;
+  /* padding: 10px 0; */
   z-index: 1000;
 }
 .bottom-navbar ul {
