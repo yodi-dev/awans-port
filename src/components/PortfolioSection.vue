@@ -12,26 +12,29 @@
 
 <script setup>
 import ProjectCard from './ProjectCard.vue'
+import logoKam from '@/assets/images/logo-kam.png'
+import logoPerpus from '@/assets/images/logo-perpus.png'
+import logoShop from '@/assets/images/logo-shop.png'
 
 const projects = [
     {
         title: 'SIM Klinik',
         stack: 'Laravel, Bootstrap, MySQL',
-        image: '/src/assets/images/logo-kam.png',
+        image: logoKam,
         description:
             'A final project built for a clinic in Gunung Kidul, managing patient visits, staff schedules, and financial reports.',
     },
     {
         title: 'Perpus App',
         stack: 'Laravel, Bootstrap, MySQL',
-        image: '/src/assets/images/logo-perpus.png',
+        image: logoPerpus,
         description:
             'A bootcamp project for managing library systems with CRUD and role-based functionality.',
     },
     {
         title: 'POS App',
         stack: 'Vue JS, Vanilla CSS',
-        image: '/src/assets/images/logo-shop.png',
+        image: logoShop,
         description:
             'A personal practice project using Vue.js with API data display and a clean, responsive UI.',
     },
