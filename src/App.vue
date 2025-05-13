@@ -1,86 +1,41 @@
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
-  <div class="row justify-content-end g-0">
-    <div class="col-lg-12 col-5">
-      <header class="container mt-5">
-        <div class="d-flex justify-content-end text-end align-items-center">
-          <img class="me-1 my-auto" src="@/assets/logo.svg" alt="brand logo" />
-          <p class="brand my-auto pb-2">awan.</p>
-        </div>
-      </header>
-    </div>
-  </div>
-  <RouterView />
+  <div class="min-h-screen flex flex-col bg-white text-gray-800">
+    <!-- Header -->
+    <header class="w-full py-5 px-20 flex items-center justify-end">
+      <p class="font-akaya text-2xl font-medium">awan.dev</p>
+    </header>
 
-  <nav class="bottom-navbar">
-    <ul>
-      <li>
-        <a title="Home" href="/"><i class="fa-solid fa-house-chimney"></i></a>
-      </li>
-      <li>
-        <a title="News" href="/news"><i class="fa-solid fa-newspaper"></i></a>
-      </li>
-      <!-- <li>
-        <a title="Blog" href="/blog"><i class="fa-solid fa-blog"></i></a>
-      </li> -->
-    </ul>
-  </nav>
+    <!-- Main Content -->
+    <main class="flex-1 px-6">
+      <RouterView />
+    </main>
+
+    <!-- Bottom Navbar -->
+    <!-- <nav class="fixed bottom-0 left-0 right-0 bg-blue-900 h-16 md:h-20 px-4 z-50">
+      <ul class="h-full flex justify-around items-center text-white font-semibold">
+        <li>
+          <router-link to="/" title="Home" class="hover:text-blue-300">
+            <i class="fa-solid fa-house-chimney text-xl md:text-2xl"></i>
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/news" title="News" class="hover:text-blue-300">
+            <i class="fa-solid fa-newspaper text-xl md:text-2xl"></i>
+          </router-link>
+        </li>
+      </ul>
+    </nav> -->
+  </div>
 </template>
 
 <style scoped>
-img {
-  height: 1em;
-}
-.brand {
-  font-family: "Akaya Kanadaka", system-ui;
-  font-weight: 500;
-  font-size: 2em;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
 
-.bottom-navbar {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  border-radius: 6px 6px 0 0;
-  height: 6rem;
-  background-color: #384868;
-  /* padding: 10px 0; */
-  z-index: 1000;
-}
-.bottom-navbar ul {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-.bottom-navbar ul li {
-  flex-grow: 1;
-  /* height: 2.5rem; */
-  text-align: center;
-  margin: 10px 0;
-  /* padding: 10px; */
-}
-.bottom-navbar ul li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 600;
-  padding: 10px;
-}
-
-.bottom-navbar ul li a:hover {
-  color: #7d8abc;
-  background-color: #fff;
-}
-
-@media (min-width: 992px) {
-  .wraping {
-    padding: 0 100px;
-  }
+.font-akaya {
+  font-family: 'Akaya Kanadaka', system-ui;
 }
 </style>
