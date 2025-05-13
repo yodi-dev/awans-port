@@ -9,6 +9,9 @@ export default defineConfig({
   plugins: [
     vue(),
   ],
+  css: {
+    postcss: './postcss.config.js'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
