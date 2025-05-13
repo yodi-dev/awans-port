@@ -17,7 +17,7 @@ const projects = [
     {
         title: 'SIM Klinik',
         stack: 'Laravel, Bootstrap, MySQL',
-        image: '/src/assets/images/logo-kam.png',
+        image: './src/assets/images/logo-kam.png',
         description:
             'A final project built for a clinic in Gunung Kidul, managing patient visits, staff schedules, and financial reports.',
     },
