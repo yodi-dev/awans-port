@@ -91,7 +91,7 @@ const projects = [
         image: logoShop,
         description:
             'A powerful and user-friendly Point of Sale (POS) web application developed to manage product inventory, streamline sales, and generate daily reports.',
-        link: 'https://github.com/yodi-dev/sistem-pos',
+        link: 'https://demo.habiba-store.my.id/',
         screenshots: [
             ssShop1,
             ssShop2,
