@@ -48,10 +48,6 @@
                     </div>
                 </div>
             </div>
-
-            <footer class="mt-12 text-center border-t pt-6 text-sm text-gray-400">
-                Created with ❤️ by Yodi Irawan | 2025
-            </footer>
         </div>
     </section>
 </template>
