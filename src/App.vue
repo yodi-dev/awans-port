@@ -29,6 +29,10 @@ import { RouterView } from "vue-router";
         </li>
       </ul>
     </nav> -->
+
+    <footer class="mt-12 text-center border-t py-6 text-sm text-gray-400">
+      Created with ❤️ by Yodi Irawan | 2025
+    </footer>
   </div>
 </template>
 

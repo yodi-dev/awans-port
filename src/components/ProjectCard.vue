@@ -1,13 +1,26 @@
 <template>
-    <div class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition">
-        <div class="flex items-center space-x-4 mb-4">
-            <img :src="project.image" alt="project logo" class="w-12 h-12 object-contain" />
-            <div>
-                <h3 class="font-semibold text-lg">{{ project.title }}</h3>
-                <span class="text-sm text-gray-500">{{ project.stack }}</span>
+    <div class="bg-white rounded-lg shadow-md hover:shadow-xl transition-all overflow-hidden group">
+        <img :src="project.image" alt="Preview"
+            class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+
+        <div class="p-6 flex flex-col h-full">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">{{ project.title }}</h3>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+                <span v-for="tech in project.stack.split(',')" :key="tech"
+                    class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">
+                    {{ tech.trim() }}
+                </span>
+            </div>
+
+            <p class="text-gray-600 text-sm flex-grow">{{ project.description }}</p>
+
+            <div v-if="project.link" class="mt-4">
+                <a :href="project.link" target="_blank" class="text-blue-600 text-sm hover:underline">
+                    🔗 Lihat Proyek
+                </a>
             </div>
         </div>
-        <p class="text-sm text-gray-600">{{ project.description }}</p>
     </div>
 </template>
 
