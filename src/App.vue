@@ -6,7 +6,7 @@ import { RouterView } from "vue-router";
   <div class="min-h-screen flex flex-col bg-white text-gray-800">
     <!-- Header -->
     <header class="w-full py-5 px-20 flex items-center justify-end">
-      <p class="font-akaya text-2xl font-medium">awan.dev</p>
+      <p class="font-akaya text-2xl font-medium"><a href="/">awanbeo</a></p>
     </header>
 
     <!-- Main Content -->
@@ -31,7 +31,8 @@ import { RouterView } from "vue-router";
     </nav> -->
 
     <footer class="mt-12 text-center border-t py-6 text-sm text-gray-400">
-      Created with ❤️ by Yodi Irawan | 2025
+      Created with ❤️ by awanbeo | 2025 |
+      <RouterLink to="/devlog" class="font-medium hover:underline">Dev Log</RouterLink>
     </footer>
   </div>
 </template>

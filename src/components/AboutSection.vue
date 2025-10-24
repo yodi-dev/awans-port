@@ -26,9 +26,9 @@
 
                     <div class="mt-8 space-y-2">
 
-                        <a href="https://maps.app.goo.gl/vC4HZvJt1KhKnopj6" target="_blank"
+                        <a href="https://maps.app.goo.gl/yTPtM39XeiS4yjfv8" target="_blank"
                             class="block hover:text-blue-500">
-                            <i class="fa-solid fa-house mr-2"></i> Umbulharjo, Yogyakarta
+                            <i class="fa-solid fa-house mr-2"></i> Sarolangun, Jambi
                         </a>
                         <a href="mailto:irawanyodi10@gmail.com" class="block hover:text-blue-500">
                             <i class="fa-regular fa-envelope mr-2"></i> irawanyodi10@gmail.com
@@ -37,13 +37,12 @@
                             class="block hover:text-blue-500">
                             <i class="fa-brands fa-linkedin-in mr-2"></i> LinkedIn
                         </a>
-                        <a href="https://wa.me/6282279696793" target="_blank" class="block hover:text-green-500">
-                            <i class="fa-brands fa-whatsapp mr-2"></i> 0822 7969 6793
+                        <a href="https://wa.me/6285183310065" target="_blank" class="block hover:text-green-500">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> 0851 8331 0065
                         </a>
                         <div><i class="fa-regular fa-heart mr-2"></i> Musik, Game</div>
-                        <a href="https://www.instagram.com/awan.lite/" target="_blank"
-                            class="block hover:text-pink-500">
-                            <i class="fa-brands fa-instagram mr-2"></i> @awan.lite
+                        <a href="https://www.instagram.com/awan.beo/" target="_blank" class="block hover:text-pink-500">
+                            <i class="fa-brands fa-instagram mr-2"></i> @awan.beo
                         </a>
                     </div>
                 </div>
