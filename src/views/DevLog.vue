@@ -6,7 +6,7 @@ const logs = ref([])
 const loading = ref(false)
 const showForm = ref(false)
 const password = ref('')
-const correctPassword = 'Red10yo*' // ganti dengan passwordmu sendiri
+const correctPassword = 'Red10yo*'
 
 const form = ref({ title: '', content: '', is_public: true })
 const canWrite = ref(false)
