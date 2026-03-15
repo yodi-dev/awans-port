@@ -32,7 +32,7 @@ import { RouterView } from "vue-router";
 
     <footer class="mt-12 text-center border-t py-6 text-sm text-gray-400">
       Created with ❤️ by awanbeo | 2025 |
-      <RouterLink to="/devlog" class="font-medium hover:underline">Dev Log</RouterLink>
+      <!-- <RouterLink to="/devlog" class="font-medium hover:underline">Dev Log</RouterLink> -->
     </footer>
   </div>
 </template>
