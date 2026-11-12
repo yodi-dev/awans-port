@@ -1,81 +1,70 @@
 <script setup lang="ts">
-import { Calendar, Clock, Tag, ArrowRight, BookOpen } from '@lucide/vue'
+import { ArrowUpRight } from '@lucide/vue'
 
 const { data: posts } = await useAsyncData('blog', () =>
   queryContent('blog').sort({ date: -1 }).find()
 )
 
 useHead({
-  title: 'Blog & Catatan Digitalisasi | awanbeo',
+  title: 'Jurnal & Catatan Digitalisasi | awanbeo',
   meta: [
     {
       name: 'description',
-      content: 'Artikel, panduan digitalisasi sekolah, serta catatan teknis seputar pembuatan aplikasi web andal oleh Yodi Irawan (awanbeo).'
+      content: 'Esai, panduan digitalisasi sekolah, serta refleksi teknis seputar pembuatan aplikasi web fungsional oleh Yodi Irawan (awanbeo).'
     }
   ]
 })
 </script>
 
 <template>
-  <div class="py-16 sm:py-24 max-w-5xl mx-auto px-4 sm:px-6">
-    <!-- Header -->
-    <div class="max-w-2xl mb-12 space-y-3">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-950/60 text-blue-600 dark:text-blue-400 text-xs font-semibold">
-        <BookOpen class="w-3.5 h-3.5" />
-        <span>Blog & Gagasan</span>
-      </div>
-      <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-        Catatan & Panduan Digitalisasi
+  <div class="py-20 md:py-32 max-w-4xl mx-auto px-6">
+    
+    <!-- Editorial Header -->
+    <header class="space-y-4 mb-20 pb-8 border-b border-hairline-light dark:border-hairline-dark">
+      <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+        [ Publikasi & Jurnal ]
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
+        Catatan Lapangan & Rekayasa Web
       </h1>
-      <p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base leading-relaxed">
-        Berbagi panduan praktis seputar modernisasi sistem sekolah, aplikasi faskes/desa, serta wawasan teknis web development.
+      <p class="text-base sm:text-lg text-stone-600 dark:text-stone-400 leading-relaxed max-w-2xl font-normal">
+        Tulisan mengenai digitalisasi sekolah, observasi sistem pelayanan daerah, serta panduan teknis yang dipelajari selama proses berkarya.
       </p>
-    </div>
+    </header>
 
-    <!-- Posts List -->
-    <div v-if="posts && posts.length" class="space-y-6">
+    <!-- Articles Feed (Editorial Archive Format) -->
+    <div v-if="posts && posts.length" class="divide-y divide-hairline-light dark:divide-hairline-dark border-b border-hairline-light dark:border-hairline-dark">
       <article
         v-for="post in posts"
         :key="post._path"
-        class="group p-6 sm:p-8 rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md hover:border-blue-500/50 transition-all"
+        class="py-12 group"
       >
-        <NuxtLink :to="post._path" class="block space-y-3">
-          <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
-            <span class="px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-medium">
+        <NuxtLink :to="post._path" class="block space-y-4">
+          <!-- Metadata Bar -->
+          <div class="flex flex-wrap items-center gap-4 text-xs font-mono uppercase tracking-caps text-stone-400 dark:text-stone-500">
+            <span class="text-stone-800 dark:text-stone-200 font-medium">
               {{ post.category || 'Artikel' }}
             </span>
-            <span class="flex items-center gap-1">
-              <Calendar class="w-3.5 h-3.5" />
-              {{ post.date }}
-            </span>
-            <span v-if="post.readTime" class="flex items-center gap-1">
-              <Clock class="w-3.5 h-3.5" />
-              {{ post.readTime }}
-            </span>
+            <span>·</span>
+            <span>{{ post.date }}</span>
+            <span v-if="post.readTime">·</span>
+            <span v-if="post.readTime">{{ post.readTime }} baca</span>
           </div>
 
-          <h2 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+          <!-- Title -->
+          <h2 class="text-2xl sm:text-3xl font-bold text-stone-950 dark:text-stone-50 group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors tracking-editorial leading-tight">
             {{ post.title }}
           </h2>
 
-          <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+          <!-- Excerpt -->
+          <p class="text-sm sm:text-base text-stone-600 dark:text-stone-400 leading-relaxed font-normal max-w-3xl">
             {{ post.description }}
           </p>
 
-          <div class="pt-3 flex items-center justify-between text-xs font-semibold text-blue-600 dark:text-blue-400">
-            <div class="flex flex-wrap gap-2">
-              <span
-                v-for="tag in post.tags"
-                :key="tag"
-                class="text-[11px] font-mono text-slate-500 dark:text-slate-400"
-              >
-                #{{ tag }}
-              </span>
-            </div>
-            <span class="inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-              <span>Baca Selengkapnya</span>
-              <ArrowRight class="w-3.5 h-3.5" />
-            </span>
+          <!-- Read Link -->
+          <div class="pt-2 flex items-center gap-1.5 text-xs font-mono text-stone-950 dark:text-stone-100 group-hover:underline underline-offset-4">
+            <span>Baca Tulisan Lengkap</span>
+            <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
           </div>
         </NuxtLink>
       </article>
@@ -84,9 +73,10 @@ useHead({
     <!-- Empty State -->
     <div
       v-else
-      class="p-12 text-center rounded-3xl border border-dashed border-slate-300 dark:border-slate-800 text-slate-500"
+      class="py-16 text-center text-sm font-mono text-stone-400"
     >
-      <p>Belum ada artikel yang dipublikasikan.</p>
+      [ Belum ada tulisan yang dipublikasikan ]
     </div>
+
   </div>
 </template>

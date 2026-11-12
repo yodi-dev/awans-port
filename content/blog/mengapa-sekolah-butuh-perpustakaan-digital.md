@@ -7,8 +7,6 @@ tags: ["Perpustakaan", "Digitalisasi Sekolah", "Web App"]
 readTime: "4 menit"
 ---
 
-# Mengapa Sekolah Modern Membutuhkan Sistem Perpustakaan Digital?
-
 Banyak sekolah di Indonesia masih mengandalkan pencatatan buku secara manual menggunakan buku besar atau lembar spreadsheet yang terpisah. 
 
 Meski terlihat sederhana pada awalnya, metode konvensional ini sering menimbulkan sejumlah kendala operasional yang berulang setiap semester:

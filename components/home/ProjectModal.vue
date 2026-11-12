@@ -6,11 +6,7 @@ import {
   ChevronLeft,
   ChevronRight,
   ExternalLink,
-  CheckCircle2,
-  Cpu,
-  Layers,
-  HelpCircle,
-  Lightbulb
+  CheckCircle2
 } from '@lucide/vue'
 import IconGithub from '~/components/icons/IconGithub.vue'
 
@@ -80,38 +76,38 @@ onUnmounted(() => {
     >
       <div
         v-if="show && project"
-        class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-slate-950/80 backdrop-blur-sm"
+        class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-stone-950/80 backdrop-blur-sm"
         @click.self="emit('close')"
       >
         <div
-          class="relative w-full max-w-4xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-3xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col"
+          class="relative w-full max-w-4xl bg-canvas-light dark:bg-canvas-dark border border-hairline-light dark:border-hairline-dark rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col"
         >
-          <!-- Header -->
-          <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800 shrink-0">
+          <!-- Top Header -->
+          <div class="flex items-center justify-between px-6 py-4 border-b border-hairline-light dark:border-hairline-dark shrink-0">
             <div>
-              <span class="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300">
-                {{ project.badge }}
+              <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500">
+                {{ project.category }} · {{ project.badge }}
               </span>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">
+              <h3 class="text-xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
                 {{ project.title }}
               </h3>
             </div>
             <button
               @click="emit('close')"
-              class="p-2 rounded-xl text-slate-400 hover:text-slate-700 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
-              aria-label="Tutup Modal"
+              class="p-2 rounded-lg text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
+              aria-label="Tutup"
             >
-              <X class="w-5 h-5" />
+              <X class="w-5 h-5 stroke-[1.5]" />
             </button>
           </div>
 
-          <!-- Modal Scrollable Content -->
+          <!-- Scrollable Body -->
           <div class="overflow-y-auto p-6 space-y-6">
             
-            <!-- Screenshots Carousel -->
+            <!-- Screenshots Frame -->
             <div
               v-if="project.screenshots && project.screenshots.length"
-              class="relative rounded-2xl overflow-hidden bg-slate-950 border border-slate-200 dark:border-slate-800 aspect-video flex items-center justify-center group"
+              class="relative rounded-xl overflow-hidden bg-stone-950 border border-hairline-light dark:border-hairline-dark aspect-video flex items-center justify-center group"
             >
               <img
                 :src="project.screenshots[currentSlide]"
@@ -126,17 +122,17 @@ onUnmounted(() => {
               >
                 <button
                   @click="prevSlide"
-                  class="p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 shadow-lg backdrop-blur-sm"
+                  class="p-2 rounded-full bg-stone-900/90 text-white hover:bg-stone-950 border border-stone-700"
                   aria-label="Slide sebelumnya"
                 >
-                  <ChevronLeft class="w-5 h-5" />
+                  <ChevronLeft class="w-5 h-5 stroke-[1.5]" />
                 </button>
                 <button
                   @click="nextSlide"
-                  class="p-2 rounded-full bg-slate-900/80 text-white hover:bg-slate-900 shadow-lg backdrop-blur-sm"
+                  class="p-2 rounded-full bg-stone-900/90 text-white hover:bg-stone-950 border border-stone-700"
                   aria-label="Slide berikutnya"
                 >
-                  <ChevronRight class="w-5 h-5" />
+                  <ChevronRight class="w-5 h-5 stroke-[1.5]" />
                 </button>
               </div>
 
@@ -147,131 +143,124 @@ onUnmounted(() => {
                   :key="idx"
                   @click="currentSlide = idx"
                   :class="[
-                    'w-2 h-2 rounded-full cursor-pointer transition-all',
-                    idx === currentSlide ? 'bg-blue-500 w-5' : 'bg-white/50 hover:bg-white/80'
+                    'h-1.5 rounded-full cursor-pointer transition-all',
+                    idx === currentSlide ? 'bg-white w-6' : 'bg-white/40 w-1.5 hover:bg-white/70'
                   ]"
                 />
               </div>
             </div>
 
-            <!-- Perspective Tabs -->
-            <div class="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800">
+            <!-- Perspectives Minimalist Tabs -->
+            <div class="flex items-center gap-6 border-b border-hairline-light dark:border-hairline-dark text-xs font-mono">
               <button
                 @click="activeTab = 'client'"
                 :class="[
-                  'pb-3 text-sm font-semibold border-b-2 flex items-center gap-2 transition-colors',
+                  'pb-3 border-b-2 transition-colors',
                   activeTab === 'client'
-                    ? 'border-blue-600 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                    ? 'border-stone-950 dark:border-stone-100 text-stone-950 dark:text-stone-100 font-medium'
+                    : 'border-transparent text-stone-400 hover:text-stone-700 dark:hover:text-stone-300'
                 ]"
               >
-                <Lightbulb class="w-4 h-4" />
-                <span>Sisi Manfaat & Solusi (Untuk Klien)</span>
+                [ 01 — Kebutuhan & Nilai Solusi ]
               </button>
               <button
                 @click="activeTab = 'tech'"
                 :class="[
-                  'pb-3 text-sm font-semibold border-b-2 flex items-center gap-2 transition-colors',
+                  'pb-3 border-b-2 transition-colors',
                   activeTab === 'tech'
-                    ? 'border-blue-600 text-blue-600 dark:text-blue-400'
-                    : 'border-transparent text-slate-500 hover:text-slate-800 dark:hover:text-slate-200'
+                    ? 'border-stone-950 dark:border-stone-100 text-stone-950 dark:text-stone-100 font-medium'
+                    : 'border-transparent text-stone-400 hover:text-stone-700 dark:hover:text-stone-300'
                 ]"
               >
-                <Cpu class="w-4 h-4" />
-                <span>Sisi Arsitektur Teknis (Engineering)</span>
+                [ 02 — Spesifikasi Arsitektur Teknis ]
               </button>
             </div>
 
-            <!-- Tab Content: Client Perspective -->
-            <div v-if="activeTab === 'client'" class="space-y-5 animate-fade-in">
-              <div class="p-4 rounded-xl bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/60">
-                <span class="text-xs font-bold text-blue-800 dark:text-blue-300 uppercase tracking-wider block mb-1">
+            <!-- Tab 1: Client & Problem Statement -->
+            <div v-if="activeTab === 'client'" class="space-y-6">
+              <div class="space-y-1">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
                   Target Pengguna
                 </span>
-                <p class="text-sm text-slate-700 dark:text-slate-300">
+                <p class="text-sm text-stone-800 dark:text-stone-200">
                   {{ project.clientView.targetAudience }}
                 </p>
               </div>
 
-              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
-                  <div class="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold text-sm mb-2">
-                    <HelpCircle class="w-4 h-4" />
-                    <span>Kendala Lapangan yang Dihadapi:</span>
-                  </div>
-                  <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
+                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-2">
+                  <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                    Kendala Lapangan:
+                  </span>
+                  <p class="text-stone-600 dark:text-stone-300">
                     {{ project.clientView.problem }}
                   </p>
                 </div>
 
-                <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
-                  <div class="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold text-sm mb-2">
-                    <CheckCircle2 class="w-4 h-4" />
-                    <span>Solusi yang Dihadirkan:</span>
-                  </div>
-                  <p class="text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-2">
+                  <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                    Solusi yang Diterapkan:
+                  </span>
+                  <p class="text-stone-600 dark:text-stone-300">
                     {{ project.clientView.solution }}
                   </p>
                 </div>
               </div>
 
-              <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-3">
-                  Manfaat Utama Operasional:
-                </h4>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div class="space-y-3">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                  Manfaat Operasional Riil:
+                </span>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700 dark:text-stone-300">
                   <div
                     v-for="benefit in project.clientView.keyBenefits"
                     :key="benefit"
-                    class="flex items-start gap-2 text-xs text-slate-700 dark:text-slate-300"
+                    class="flex items-start gap-2"
                   >
-                    <CheckCircle2 class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                    <CheckCircle2 class="w-3.5 h-3.5 text-stone-900 dark:text-stone-100 shrink-0 mt-0.5 stroke-[1.5]" />
                     <span>{{ benefit }}</span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <!-- Tab Content: Tech Perspective -->
-            <div v-else class="space-y-5 animate-fade-in">
-              <!-- Tech Stack Badges -->
-              <div>
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-2">
-                  Teknologi yang Digunakan
+            <!-- Tab 2: Technical Specs -->
+            <div v-else class="space-y-6">
+              <div class="space-y-2">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                  Tech Stack
                 </span>
                 <div class="flex flex-wrap gap-2">
                   <span
                     v-for="tech in project.techView.stack"
                     :key="tech"
-                    class="px-3 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700"
+                    class="px-2.5 py-1 rounded-md text-xs font-mono border border-hairline-light dark:border-hairline-dark bg-stone-50 dark:bg-stone-900 text-stone-700 dark:text-stone-300"
                   >
                     {{ tech }}
                   </span>
                 </div>
               </div>
 
-              <!-- Architecture -->
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-700/60">
-                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">
-                  Arsitektur & Pola Desain
+              <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-1.5">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                  Pola Arsitektur
                 </span>
-                <p class="text-xs text-slate-700 dark:text-slate-300 leading-relaxed font-mono">
+                <p class="text-xs font-mono text-stone-700 dark:text-stone-300 leading-relaxed">
                   {{ project.techView.architecture }}
                 </p>
               </div>
 
-              <!-- Technical Highlights -->
-              <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white mb-2">
-                  Sorotan Teknis (Key Engineering Points):
-                </h4>
-                <ul class="space-y-2">
+              <div class="space-y-2">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                  Highlight Rekayasa Teknis:
+                </span>
+                <ul class="space-y-1.5 text-xs text-stone-600 dark:text-stone-300">
                   <li
                     v-for="point in project.techView.technicalHighlights"
                     :key="point"
-                    class="text-xs text-slate-600 dark:text-slate-400 flex items-start gap-2"
+                    class="flex items-start gap-2"
                   >
-                    <span class="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 mt-1.5"></span>
+                    <span class="text-stone-400 select-none font-mono">―</span>
                     <span>{{ point }}</span>
                   </li>
                 </ul>
@@ -280,18 +269,18 @@ onUnmounted(() => {
 
           </div>
 
-          <!-- Footer Actions -->
-          <div class="px-6 py-4 border-t border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 flex flex-wrap items-center justify-between gap-3 shrink-0">
-            <div class="flex items-center gap-3">
+          <!-- Bottom Actions Bar -->
+          <div class="px-6 py-4 border-t border-hairline-light dark:border-hairline-dark flex items-center justify-between text-xs font-mono shrink-0">
+            <div class="flex items-center gap-4">
               <a
                 v-if="project.links.demo"
                 :href="project.links.demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                class="inline-flex items-center gap-1.5 text-stone-900 dark:text-stone-100 hover:opacity-70 transition-opacity underline underline-offset-4"
               >
                 <span>Kunjungi Live Demo</span>
-                <ExternalLink class="w-3.5 h-3.5" />
+                <ExternalLink class="w-3.5 h-3.5 stroke-[1.5]" />
               </a>
 
               <a
@@ -299,18 +288,18 @@ onUnmounted(() => {
                 :href="project.links.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 transition-colors"
+                class="inline-flex items-center gap-1.5 text-stone-500 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
               >
                 <IconGithub class="w-3.5 h-3.5" />
-                <span>Lihat di GitHub</span>
+                <span>Repositori GitHub</span>
               </a>
             </div>
 
             <button
               @click="emit('close')"
-              class="px-4 py-2 rounded-xl text-xs font-medium text-slate-500 hover:text-slate-800 dark:hover:text-slate-200"
+              class="text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
             >
-              Tutup Pratinjau
+              Tutup [Esc]
             </button>
           </div>
         </div>

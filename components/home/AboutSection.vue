@@ -1,114 +1,78 @@
 <script setup lang="ts">
-import { GraduationCap, HeartHandshake, Code2, MapPin, CheckCircle2 } from '@lucide/vue'
-
-const values = [
-  {
-    icon: GraduationCap,
-    title: 'Paham Kebutuhan Pengguna Awam',
-    desc: 'Latar belakang Pendidikan TIK melatih saya mendengarkan kendala pengguna dan merancang antarmuka yang ramah bahkan bagi yang belum melek teknologi.'
-  },
-  {
-    icon: Code2,
-    title: 'Arsitektur Bersih & Aman',
-    desc: 'Menggunakan standar framework modern (Laravel & Vue/Nuxt) dengan validasi data ketat dan performa tinggi yang tidak memberatkan kuota internet.'
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Edukasi & Pendampingan Pasca-Rilis',
-    desc: 'Tidak sekadar menyerahkan kode lalu pergi. Saya menyediakan panduan operasional dan sesi tanya jawab agar sistem benar-benar terpakai optimal.'
-  }
-]
-
 const stackCategories = [
   {
-    name: 'Backend & Database',
-    skills: ['Laravel', 'PHP', 'MySQL', 'REST API', 'Eloquent ORM']
+    name: 'Backend & Sistem',
+    skills: ['Laravel', 'PHP', 'MySQL', 'REST API', 'Eloquent ORM', 'Database Architecture']
   },
   {
-    name: 'Frontend & UI',
-    skills: ['Vue 3', 'Nuxt 3', 'Tailwind CSS', 'Livewire', 'TypeScript/JS']
+    name: 'Frontend & Reaktivitas',
+    skills: ['Vue 3', 'Nuxt 3', 'Tailwind CSS', 'Livewire', 'TypeScript / JS']
   },
   {
-    name: 'Infrastruktur & Alat Kerja',
-    skills: ['Cloudflare Pages', 'Git & GitHub', 'Linux Server / VPS', 'Postman']
+    name: 'Infrastruktur & Delivery',
+    skills: ['Cloudflare Pages', 'Git & GitHub', 'Linux VPS / Server', 'Postman']
   }
 ]
 </script>
 
 <template>
-  <section id="tentang" class="py-24 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80 transition-colors">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
-        <!-- Story & Pillars -->
-        <div class="lg:col-span-7 space-y-6">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-            Filosofi & Profil
+  <section id="tentang" class="py-24 md:py-32 border-b border-hairline-light dark:border-hairline-dark">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 pb-8 border-b border-hairline-light dark:border-hairline-dark">
+        <div class="lg:col-span-8 space-y-3">
+          <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500">
+            [ 03 — Latar Belakang & Filosofi ]
           </span>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-            Menjembatani Teknologi Canggih dengan Kemudahan Nyata
+          <h2 class="text-3xl sm:text-4xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
+            Teknologi Tanpa Kerumitan
           </h2>
-          
-          <div class="space-y-4 text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-            <p>
-              Lahir dan bertumbuh di Sumatera, ketertarikan saya pada dunia komputasi bermula sejak SMK hingga menyelesaikan studi di bidang <strong>Pendidikan Teknologi Informasi & Komunikasi (Pendidikan TIK)</strong>.
-            </p>
-            <p>
-              Pengalaman tersebut menyadarkan saya bahwa masalah digitalisasi di sekolah atau instansi daerah sering kali <em>bukan</em> karena kurangnya software, melainkan software yang ada terlalu rumit, lambat, atau pengembangnya sulit diajak berdiskusi.
-            </p>
-            <p>
-              Oleh karena itu, fokus utama saya adalah menghadirkan sistem web yang mempermudah kerja manusia di baliknya—bukan malah menambah beban kerja baru.
-            </p>
-          </div>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <p class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed font-normal">
+            Pendidikan TIK sebagai jembatan empati antara kode dan pengguna awam.
+          </p>
+        </div>
+      </div>
 
-          <!-- Value Pillars -->
-          <div class="pt-4 space-y-4">
-            <div
-              v-for="val in values"
-              :key="val.title"
-              class="flex items-start gap-3.5 p-3.5 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800"
-            >
-              <div class="w-10 h-10 rounded-xl bg-blue-50 dark:bg-blue-950/80 flex items-center justify-center text-blue-600 dark:text-blue-400 shrink-0">
-                <component :is="val.icon" class="w-5 h-5" />
-              </div>
-              <div>
-                <h4 class="text-sm font-bold text-slate-900 dark:text-white">
-                  {{ val.title }}
-                </h4>
-                <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5 leading-relaxed">
-                  {{ val.desc }}
-                </p>
-              </div>
-            </div>
-          </div>
+      <!-- Narrative & Technical Competency Columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+        
+        <!-- Left: Personal Story & Manifesto -->
+        <div class="lg:col-span-7 space-y-6 text-stone-700 dark:text-stone-300 text-base sm:text-lg leading-relaxed font-normal">
+          <p>
+            Berakar di Sumatera dan menyelesaikan studi di bidang <strong>Pendidikan Teknologi Informasi & Komunikasi (Pendidikan TIK)</strong>, saya melihat bahwa kegagalan adopsi sistem digital di sekolah atau daerah jarang disebabkan oleh keterbatasan teknologi.
+          </p>
+          <p>
+            Masalah utamanya hampir selalu sama: sistem yang dirancang terlalu rumit bagi staf lapangan, proses pelatihan yang minim, atau pengembang yang sulit diajak berkomunikasi menggunakan bahasa sehari-hari.
+          </p>
+          <p class="text-stone-500 dark:text-stone-400 text-sm sm:text-base">
+            Oleh sebab itu, dalam setiap proyek saya memegang tiga prinsip: <em>menghilangkan friksi pengguna awam</em>, <em>menjaga arsitektur kode tetap bersih dan terdokumentasi</em>, serta <em>memberikan pendampingan hingga sistem benar-benar berjalan mandiri</em>.
+          </p>
         </div>
 
-        <!-- Tech Stack Bento Card -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="rounded-3xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm space-y-6">
-            <div>
-              <span class="text-xs font-bold uppercase tracking-wider text-slate-400">
-                Keahlian & Toolkit
-              </span>
-              <h3 class="text-xl font-bold text-slate-900 dark:text-white mt-1">
-                Teknologi yang Saya Kuasai
-              </h3>
-            </div>
+        <!-- Right: Technical Toolkit Index -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-6">
+            <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500 block pb-2 border-b border-hairline-light dark:border-hairline-dark">
+              Spesifikasi Keahlian Teknis
+            </span>
 
-            <div class="space-y-5">
+            <div class="space-y-6">
               <div
-                v-for="category in stackCategories"
-                :key="category.name"
+                v-for="cat in stackCategories"
+                :key="cat.name"
                 class="space-y-2.5"
               >
-                <h4 class="text-xs font-semibold text-slate-700 dark:text-slate-300">
-                  {{ category.name }}
+                <h4 class="font-mono text-xs text-stone-950 dark:text-stone-100 font-semibold uppercase tracking-caps">
+                  {{ cat.name }}
                 </h4>
-                <div class="flex flex-wrap gap-2">
+                <div class="flex flex-wrap gap-x-3 gap-y-1.5 text-xs font-mono text-stone-500 dark:text-stone-400">
                   <span
-                    v-for="skill in category.skills"
+                    v-for="skill in cat.skills"
                     :key="skill"
-                    class="px-2.5 py-1 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-200 border border-slate-200/80 dark:border-slate-700/80"
+                    class="after:content-['·'] last:after:content-none after:ml-3"
                   >
                     {{ skill }}
                   </span>
@@ -116,16 +80,16 @@ const stackCategories = [
               </div>
             </div>
 
-            <!-- Location Note -->
-            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
-              <MapPin class="w-4 h-4 text-rose-500 shrink-0" />
-              <span>Berbasis di <strong>Sarolangun, Jambi</strong>. Siap berkolaborasi baik secara daring (remote) maupun peninjauan langsung bila dibutuhkan.</span>
+            <!-- Base Note -->
+            <div class="pt-6 border-t border-hairline-light dark:border-hairline-dark text-xs font-mono text-stone-400 dark:text-stone-500 space-y-1">
+              <div>LOKASI: Sarolangun, Jambi — Indonesia</div>
+              <div>METODE: Daring (Remote) / Kunjungan Lapangan Berdasarkan Kesepakatan</div>
             </div>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 </template>
-

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ArrowLeft, Calendar, Clock, MessageSquare, Share2 } from '@lucide/vue'
+import { ArrowLeft, ArrowUpRight } from '@lucide/vue'
 
 const route = useRoute()
 const { data: post } = await useAsyncData(`content-${route.path}`, () =>
@@ -21,70 +21,75 @@ useHead({
 </script>
 
 <template>
-  <div class="py-16 sm:py-20 max-w-3xl mx-auto px-4 sm:px-6">
-    <!-- Back to Blog -->
+  <div class="py-16 md:py-24 max-w-2xl mx-auto px-6">
+    
+    <!-- Return Navigation -->
     <NuxtLink
       to="/blog"
-      class="inline-flex items-center gap-2 text-xs font-semibold text-slate-500 hover:text-blue-600 dark:hover:text-blue-400 mb-8 transition-colors"
+      class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-caps text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 mb-12 transition-colors"
     >
-      <ArrowLeft class="w-4 h-4" />
-      <span>Kembali ke Daftar Blog</span>
+      <ArrowLeft class="w-3.5 h-3.5 stroke-[1.5]" />
+      <span>Kembali ke Indeks Jurnal</span>
     </NuxtLink>
 
-    <article v-if="post" class="space-y-8">
+    <article v-if="post" class="space-y-10">
+      
       <!-- Article Header -->
-      <header class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-8">
-        <div class="flex flex-wrap items-center gap-3 text-xs text-slate-500 dark:text-slate-400">
-          <span class="px-2.5 py-1 rounded-full bg-blue-100 dark:bg-blue-900/60 text-blue-700 dark:text-blue-300 font-semibold">
+      <header class="space-y-6 pb-8 border-b border-hairline-light dark:border-hairline-dark">
+        <!-- Metadata -->
+        <div class="flex flex-wrap items-center gap-3 text-xs font-mono uppercase tracking-caps text-stone-400 dark:text-stone-500">
+          <span class="text-stone-800 dark:text-stone-200 font-semibold">
             {{ post.category || 'Artikel' }}
           </span>
-          <span class="flex items-center gap-1">
-            <Calendar class="w-3.5 h-3.5" />
-            {{ post.date }}
-          </span>
-          <span v-if="post.readTime" class="flex items-center gap-1">
-            <Clock class="w-3.5 h-3.5" />
-            {{ post.readTime }}
-          </span>
+          <span>·</span>
+          <span>{{ post.date }}</span>
+          <span v-if="post.readTime">·</span>
+          <span v-if="post.readTime">{{ post.readTime }} baca</span>
         </div>
 
-        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight leading-tight">
+        <!-- Headline -->
+        <h1 class="text-3xl sm:text-4xl md:text-[2.75rem] font-bold text-stone-950 dark:text-stone-50 tracking-editorial leading-[1.18]">
           {{ post.title }}
         </h1>
 
-        <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed font-medium">
+        <!-- Excerpt / Dek -->
+        <p class="text-lg text-stone-600 dark:text-stone-400 leading-relaxed font-normal">
           {{ post.description }}
         </p>
       </header>
 
-      <!-- Markdown Body -->
-      <div class="prose prose-slate dark:prose-invert max-w-none space-y-4 text-slate-700 dark:text-slate-300 leading-relaxed text-base [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-slate-900 dark:[&>h2]:text-white [&>h2]:mt-8 [&>h2]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:space-y-2 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:space-y-2 [&>p]:leading-relaxed">
+      <!-- Editorial Body Reading Content -->
+      <div class="prose prose-stone dark:prose-invert max-w-none text-stone-800 dark:text-stone-200 text-base leading-[1.85] font-normal space-y-6 [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-stone-950 dark:[&>h2]:text-stone-50 [&>h2]:tracking-editorial [&>h2]:mt-12 [&>h2]:mb-4 [&>ul]:list-none [&>ul]:pl-0 [&>ul]:space-y-2 [&>ul>li]:relative [&>ul>li]:pl-5 [&>ul>li]:before:content-['―'] [&>ul>li]:before:absolute [&>ul>li]:before:left-0 [&>ul>li]:before:text-stone-400 [&>ol]:list-decimal [&>ol]:pl-5 [&>ol]:space-y-2.5">
         <ContentRenderer :value="post" />
       </div>
 
-      <!-- Article Footer / CTA -->
-      <footer class="pt-8 border-t border-slate-200 dark:border-slate-800 mt-12 space-y-6">
-        <div class="p-6 rounded-3xl bg-blue-50/60 dark:bg-blue-950/40 border border-blue-200 dark:border-blue-900/60 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div>
-            <h4 class="font-bold text-slate-900 dark:text-white text-base">
-              Tertarik Menerapkan Solusi Serupa?
-            </h4>
-            <p class="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
-              Mari diskusikan kebutuhan sistem digital sekolah atau instansi Anda secara langsung.
-            </p>
-          </div>
+      <!-- Article Footer / Invitation -->
+      <footer class="pt-12 border-t border-hairline-light dark:border-hairline-dark mt-16 space-y-6">
+        <div class="space-y-2">
+          <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+            [ Kolaborasi & Tanya Jawab ]
+          </span>
+          <h3 class="text-xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
+            Tertarik mendiskusikan implementasi untuk sekolah Anda?
+          </h3>
+          <p class="text-sm text-stone-600 dark:text-stone-400 leading-relaxed">
+            Saya selalu terbuka untuk berdiskusi santai mengenai alur kerja perpustakaan atau sistem sekolah yang ingin dimodernisasi.
+          </p>
+        </div>
+
+        <div class="pt-2">
           <a
             :href="`https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20membaca%20artikel%20'${encodeURIComponent(post.title)}'%20dan%20tertarik%20konsultasi.`"
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 shrink-0 transition-colors"
+            class="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-stone-950 dark:text-stone-100 hover:opacity-70 transition-opacity underline underline-offset-4"
           >
-            <MessageSquare class="w-4 h-4" />
-            <span>Diskusi Solusi</span>
+            <span>Mulai Diskusi via WhatsApp</span>
+            <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5]" />
           </a>
         </div>
       </footer>
+
     </article>
   </div>
 </template>
-

@@ -13,18 +13,28 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace']
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'monospace'],
+        serif: ['"Newsreader"', 'Georgia', 'serif'],
       },
       colors: {
-        brand: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          900: '#1e3a8a',
+        canvas: {
+          light: '#FAFAF9', // warm neutral alabaster
+          dark: '#0A0A0C',  // deep obsidian
+        },
+        surface: {
+          light: '#FFFFFF',
+          dark: '#121215',
+        },
+        hairline: {
+          light: '#E7E5E4',
+          dark: '#26262B',
         }
+      },
+      letterSpacing: {
+        editorial: '-0.03em',
+        subtle: '-0.015em',
+        caps: '0.1em',
       }
     },
   },

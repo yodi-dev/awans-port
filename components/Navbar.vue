@@ -1,109 +1,93 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useDark, useToggle } from '@vueuse/core'
-import {
-  Sun,
-  Moon,
-  Menu,
-  X,
-  MessageSquare,
-  Sparkles,
-  Layers,
-  FolderGit2,
-  User,
-  BookOpen
-} from '@lucide/vue'
+import { Sun, Moon, ArrowUpRight, Menu, X } from '@lucide/vue'
 
 const isDark = useDark()
 const toggleDark = useToggle(isDark)
 
-const isMobileMenuOpen = ref(false)
+const isMobileOpen = ref(false)
 
 const navLinks = [
-  { label: 'Solusi', href: '/#solusi', icon: Layers },
-  { label: 'Karya & Proyek', href: '/#proyek', icon: FolderGit2 },
-  { label: 'Tentang', href: '/#tentang', icon: User },
-  { label: 'Blog', href: '/blog', icon: BookOpen },
+  { label: 'Solusi', href: '/#solusi' },
+  { label: 'Karya', href: '/#proyek' },
+  { label: 'Tentang', href: '/#tentang' },
+  { label: 'Jurnal / Blog', href: '/blog' },
 ]
 </script>
 
 <template>
-  <header class="sticky top-0 z-40 w-full border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-slate-950/85 backdrop-blur-md transition-colors duration-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+  <header class="sticky top-0 z-40 w-full border-b border-hairline-light dark:border-hairline-dark bg-canvas-light/95 dark:bg-canvas-dark/95 backdrop-blur-sm transition-colors duration-200">
+    <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
       
-      <!-- Logo & Availability Badge -->
-      <NuxtLink to="/" class="flex items-center gap-3 group">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-500 flex items-center justify-center text-white font-bold text-lg shadow-sm group-hover:scale-105 transition-transform">
-          A
-        </div>
-        <div class="flex flex-col">
-          <span class="font-bold text-slate-900 dark:text-white tracking-tight leading-none group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-            awanbeo
-          </span>
-          <span class="text-[11px] text-slate-500 dark:text-slate-400 flex items-center gap-1.5 mt-0.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-            Siap untuk Proyek Baru
-          </span>
-        </div>
+      <!-- Wordmark -->
+      <NuxtLink to="/" class="group flex items-baseline gap-2.5">
+        <span class="font-semibold text-lg text-stone-950 dark:text-stone-50 tracking-tight group-hover:text-stone-600 dark:group-hover:text-stone-300 transition-colors">
+          Yodi Irawan
+        </span>
+        <span class="font-mono text-xs text-stone-400 dark:text-stone-500">
+          / awanbeo
+        </span>
       </NuxtLink>
 
-      <!-- Desktop Nav Links -->
-      <nav class="hidden md:flex items-center gap-1">
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-8 text-sm">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.label"
           :to="link.href"
-          class="px-3.5 py-1.5 rounded-lg text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-colors"
+          class="text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors py-1"
         >
           {{ link.label }}
         </NuxtLink>
       </nav>
 
-      <!-- Desktop Action & Theme Switcher -->
-      <div class="hidden md:flex items-center gap-3">
-        <!-- Theme Toggle -->
+      <!-- Desktop Right Controls -->
+      <div class="hidden md:flex items-center gap-6">
+        <!-- Theme Switcher -->
         <button
           @click="toggleDark()"
           type="button"
-          aria-label="Toggle Theme"
-          class="p-2 rounded-lg text-slate-500 hover:text-slate-800 dark:text-slate-400 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/70 transition-colors"
+          aria-label="Ganti Tema"
+          class="text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors p-1"
         >
-          <Sun v-if="isDark" class="w-5 h-5" />
-          <Moon v-else class="w-5 h-5" />
+          <Sun v-if="isDark" class="w-4 h-4 stroke-[1.5]" />
+          <Moon v-else class="w-4 h-4 stroke-[1.5]" />
         </button>
 
-        <!-- CTA WhatsApp Button -->
+        <span class="w-px h-4 bg-hairline-light dark:bg-hairline-dark"></span>
+
+        <!-- Direct Contact Action -->
         <a
           href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20website/aplikasi."
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 shadow-sm shadow-blue-500/20 active:scale-95 transition-all"
+          class="inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-tight text-stone-900 dark:text-stone-100 hover:opacity-70 transition-opacity"
         >
-          <MessageSquare class="w-4 h-4" />
-          <span>Konsultasi Proyek</span>
+          <span>Mulai Diskusi</span>
+          <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5]" />
         </a>
       </div>
 
-      <!-- Mobile Menu Toggle Button -->
-      <div class="flex items-center gap-2 md:hidden">
+      <!-- Mobile Hamburger Button -->
+      <div class="flex items-center gap-3 md:hidden">
         <button
           @click="toggleDark()"
           type="button"
-          aria-label="Toggle Theme"
-          class="p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+          aria-label="Ganti Tema"
+          class="p-2 text-stone-500 dark:text-stone-400"
         >
-          <Sun v-if="isDark" class="w-5 h-5" />
-          <Moon v-else class="w-5 h-5" />
+          <Sun v-if="isDark" class="w-4 h-4 stroke-[1.5]" />
+          <Moon v-else class="w-4 h-4 stroke-[1.5]" />
         </button>
-
         <button
-          @click="isMobileMenuOpen = !isMobileMenuOpen"
+          @click="isMobileOpen = !isMobileOpen"
           type="button"
-          aria-label="Toggle Menu"
-          class="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+          aria-label="Toggle Navigasi"
+          class="p-2 text-stone-700 dark:text-stone-300"
         >
-          <X v-if="isMobileMenuOpen" class="w-6 h-6" />
-          <Menu v-else class="w-6 h-6" />
+          <X v-if="isMobileOpen" class="w-5 h-5 stroke-[1.5]" />
+          <Menu v-else class="w-5 h-5 stroke-[1.5]" />
         </button>
       </div>
 
@@ -111,29 +95,28 @@ const navLinks = [
 
     <!-- Mobile Drawer -->
     <div
-      v-if="isMobileMenuOpen"
-      class="md:hidden border-t border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md px-4 py-4 space-y-2"
+      v-if="isMobileOpen"
+      class="md:hidden border-b border-hairline-light dark:border-hairline-dark bg-canvas-light dark:bg-canvas-dark px-6 py-6 space-y-4"
     >
       <NuxtLink
         v-for="link in navLinks"
         :key="link.label"
         :to="link.href"
-        @click="isMobileMenuOpen = false"
-        class="flex items-center gap-3 px-3 py-2 rounded-lg text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+        @click="isMobileOpen = false"
+        class="block text-base font-medium text-stone-700 dark:text-stone-200 hover:text-stone-950 dark:hover:text-white"
       >
-        <component :is="link.icon" class="w-5 h-5 text-slate-400" />
-        <span>{{ link.label }}</span>
+        {{ link.label }}
       </NuxtLink>
 
-      <div class="pt-3 border-t border-slate-100 dark:border-slate-800/80">
+      <div class="pt-4 border-t border-hairline-light dark:border-hairline-dark">
         <a
           href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20website/aplikasi."
           target="_blank"
           rel="noopener noreferrer"
-          class="flex items-center justify-center gap-2 w-full px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700"
+          class="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-stone-900 dark:text-stone-100"
         >
-          <MessageSquare class="w-4 h-4" />
-          <span>Konsultasi via WhatsApp</span>
+          <span>Mulai Diskusi via WhatsApp</span>
+          <ArrowUpRight class="w-4 h-4 stroke-[1.5]" />
         </a>
       </div>
     </div>

@@ -1,124 +1,129 @@
 <script setup lang="ts">
-import { GraduationCap, Building2, Store, CheckCircle, ArrowRight } from '@lucide/vue'
+import { ArrowUpRight } from '@lucide/vue'
 
 const solutions = [
   {
-    icon: GraduationCap,
-    title: 'Digitalisasi Sekolah & Pendidikan',
-    tag: 'Fokus Utama',
-    tagColor: 'bg-blue-100 text-blue-700 dark:bg-blue-900/60 dark:text-blue-300',
+    index: '01',
+    category: 'Sistem Pendidikan',
+    title: 'Digitalisasi Sekolah & Perpustakaan',
     description:
-      'Membantu sekolah menengah (SMK/SMA/SMP) dan madrasah beralih dari tumpukan berkas manual ke sistem digital yang praktis.',
-    offerings: [
-      'Sistem Informasi Perpustakaan & Katalog Buku Online',
-      'Website Profil Sekolah & Pengumuman Resmi',
-      'Sistem Pendaftaran Siswa Baru (PPDB Online)',
-      'Aplikasi Bank Soal & Tryout Sekolah Mandiri'
+      'Membantu institusi pendidikan (SMK/SMA/SMP, Madrasah, dan Rumah Baca) beralih dari pencatatan manual berbelit ke sistem terpadu yang memangkas waktu kerja guru dan staf.',
+    scope: [
+      'Sistem Informasi Perpustakaan & Pelacakan Sirkulasi Buku',
+      'Katalog Buku Digital Siswa & Otomasi Denda Keterlambatan',
+      'Website Profil Sekolah & Portal Informasi Siswa',
+      'Sistem Pendaftaran Siswa Baru (PPDB Online)'
     ]
   },
   {
-    icon: Building2,
-    title: 'Sistem Layanan & Institusi Daerah',
-    tag: 'Pelayanan Publik',
-    tagColor: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/60 dark:text-emerald-300',
+    index: '02',
+    category: 'Layanan Publik',
+    title: 'Sistem Informasi Institusi & Faskes Daerah',
     description:
-      'Solusi software handal untuk fasilitas kesehatan pratama, kantor desa, dan organisasi lokal yang membutuhkan alur kerja transparan.',
-    offerings: [
-      'SIM Klinik Pratama & Rekam Medis Pasien Terpadu',
-      'Website Profil Desa & Transparansi Informasi Warga',
-      'Sistem Manajemen Surat & Pelayanan Administrasi Desa',
-      'Aplikasi Inventaris Aset Lembaga/Instansi'
+      'Merancang sistem informasi manajemen terstruktur untuk fasilitas kesehatan pratama, klinik swasta, dan organisasi pemerintahan tingkat desa yang memerlukan transparansi data.',
+    scope: [
+      'SIM Klinik Pratama: Pendaftaran, Rekam Medis & Kasir',
+      'Integrasi Stok Obat Farmasi & Kartu Stok Real-time',
+      'Website Profil Desa & Transparansi Anggaran Warga',
+      'Sistem Administrasi Persuratan & Inventarisasi Aset'
     ]
   },
   {
-    icon: Store,
-    title: 'Aplikasi Ritel & POS UMKM',
-    tag: 'Bisnis Daerah',
-    tagColor: 'bg-purple-100 text-purple-700 dark:bg-purple-900/60 dark:text-purple-300',
+    index: '03',
+    category: 'Bisnis & UMKM',
+    title: 'Aplikasi Kasir (POS) & Manajemen Stok',
     description:
-      'Membantu wirausaha dan toko ritel mengontrol arus uang kasir, memantau sisa stok barang, dan mencegah kebocoran finansial.',
-    offerings: [
-      'Point of Sale (Aplikasi Kasir Web) Cepat & Responsif',
-      'Manajemen Stok Barang & Peringatan Stok Menipis',
-      'Laporan Laba/Rugi Harian Otomatis',
-      'Tanpa Biaya Langganan Bulanan Software yang Mahal'
+      'Solusi aplikasi web kasir berkecepatan tinggi untuk toko ritel dan wirausaha lokal. Mengontrol aliran uang kas, memantau sisa barang, dan menyajikan laporan laba harian tanpa biaya langganan software yang memberatkan.',
+    scope: [
+      'Point of Sale (POS) Kasir Cepat & Responsif Tablet/PC',
+      'Pencatatan Stok Masuk/Keluar & Peringatan Stok Menipis',
+      'Dashboard Rekap Laba/Rugi Harian & Produk Terlaris',
+      'Arsitektur Standalone Tanpa Biaya Sewa Bulanan'
     ]
   }
 ]
 </script>
 
 <template>
-  <section id="solusi" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200/80 dark:border-slate-800/80 transition-colors">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+  <section id="solusi" class="py-24 md:py-32 border-b border-hairline-light dark:border-hairline-dark">
+    <div class="max-w-6xl mx-auto px-6">
       
       <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400">
-          Solusi & Layanan
-        </span>
-        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
-          Apa yang Bisa Kita Bangun Bersama?
-        </h2>
-        <p class="text-slate-600 dark:text-slate-400 text-base leading-relaxed">
-          Setiap instansi dan usaha memiliki tantangan operasional yang unik. Saya fokus merancang solusi berbasis web yang pas dengan alur kerja pengguna sebenarnya di lapangan.
-        </p>
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 pb-8 border-b border-hairline-light dark:border-hairline-dark">
+        <div class="lg:col-span-8 space-y-3">
+          <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500">
+            [ 01 — Ruang Lingkup Layanan ]
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
+            Solusi yang Dirancang untuk Kebutuhan Nyata
+          </h2>
+        </div>
+        <div class="lg:col-span-4 lg:text-right">
+          <p class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed font-normal">
+            Fokus pada sistem yang langsung memecahkan bottleneck operasional di lapangan.
+          </p>
+        </div>
       </div>
 
-      <!-- Solutions Cards -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div
+      <!-- Architectural List (De-card-ified) -->
+      <div class="divide-y divide-hairline-light dark:divide-hairline-dark">
+        <article
           v-for="item in solutions"
-          :key="item.title"
-          class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 flex flex-col justify-between shadow-sm hover:shadow-md transition-shadow group"
+          :key="item.index"
+          class="py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 group"
         >
-          <div class="space-y-4">
-            <!-- Icon & Tag -->
-            <div class="flex items-center justify-between">
-              <div class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-950/80 flex items-center justify-center text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform">
-                <component :is="item.icon" class="w-6 h-6" />
-              </div>
-              <span :class="['text-[11px] font-semibold px-2.5 py-1 rounded-full', item.tagColor]">
-                {{ item.tag }}
-              </span>
-            </div>
+          <!-- Column 1: Index Number & Category -->
+          <div class="lg:col-span-3 space-y-2">
+            <span class="font-mono text-2xl font-light text-stone-300 dark:text-stone-700 block">
+              {{ item.index }}
+            </span>
+            <span class="font-mono text-xs uppercase tracking-caps text-stone-500 dark:text-stone-400">
+              {{ item.category }}
+            </span>
+          </div>
 
-            <!-- Title & Desc -->
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white">
+          <!-- Column 2: Main Title & Purpose -->
+          <div class="lg:col-span-5 space-y-4">
+            <h3 class="text-xl sm:text-2xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
               {{ item.title }}
             </h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+            <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
               {{ item.description }}
             </p>
-
-            <!-- Offering Checklist -->
-            <div class="pt-4 border-t border-slate-100 dark:border-slate-800 space-y-2.5">
-              <div
-                v-for="feature in item.offerings"
-                :key="feature"
-                class="flex items-start gap-2.5 text-xs text-slate-700 dark:text-slate-300"
+            <div class="pt-2">
+              <a
+                href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berdiskusi%20tentang%20solusi%20ini."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-mono text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
               >
-                <CheckCircle class="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
-                <span>{{ feature }}</span>
-              </div>
+                <span>Konsultasi kebutuhan ini</span>
+                <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5]" />
+              </a>
             </div>
           </div>
 
-          <!-- Bottom Action -->
-          <div class="pt-6 mt-6 border-t border-slate-100 dark:border-slate-800">
-            <a
-              href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20dengan%20solusi%20untuk%20kebutuhan%20saya."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
-            >
-              <span>Konsultasi Solusi Ini</span>
-              <ArrowRight class="w-3.5 h-3.5" />
-            </a>
+          <!-- Column 3: Scope Breakdown -->
+          <div class="lg:col-span-4">
+            <div class="space-y-2.5 pt-1">
+              <span class="font-mono text-[11px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block mb-3">
+                Ruang Lingkup Solusi:
+              </span>
+              <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300">
+                <li
+                  v-for="scopeItem in item.scope"
+                  :key="scopeItem"
+                  class="flex items-start gap-2.5"
+                >
+                  <span class="text-stone-300 dark:text-stone-600 font-mono select-none">―</span>
+                  <span class="leading-relaxed">{{ scopeItem }}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
 
     </div>
   </section>
 </template>
-

@@ -1,120 +1,57 @@
 <script setup lang="ts">
-import { MessageSquare, Mail, Heart, MapPin, ArrowUpRight } from '@lucide/vue'
-import IconGithub from '~/components/icons/IconGithub.vue'
-import IconLinkedin from '~/components/icons/IconLinkedin.vue'
+import { ArrowUpRight } from '@lucide/vue'
 
 const currentYear = new Date().getFullYear()
 
 const socialLinks = [
-  {
-    label: 'WhatsApp',
-    href: 'https://wa.me/6285183310065',
-    icon: MessageSquare,
-    color: 'hover:text-emerald-500'
-  },
-  {
-    label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/yodi-irawan/',
-    icon: IconLinkedin,
-    color: 'hover:text-blue-500'
-  },
-  {
-    label: 'GitHub',
-    href: 'https://github.com/yodi-dev',
-    icon: IconGithub,
-    color: 'hover:text-slate-900 dark:hover:text-white'
-  },
-  {
-    label: 'Email',
-    href: 'mailto:irawanyodi10@gmail.com',
-    icon: Mail,
-    color: 'hover:text-red-500'
-  }
+  { label: 'WhatsApp', href: 'https://wa.me/6285183310065' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/yodi-irawan/' },
+  { label: 'GitHub', href: 'https://github.com/yodi-dev' },
+  { label: 'Email', href: 'mailto:irawanyodi10@gmail.com' }
 ]
 </script>
 
 <template>
-  <footer class="border-t border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 transition-colors duration-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-12 md:py-16">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
-        
-        <!-- Brand Info -->
-        <div class="md:col-span-2 space-y-4">
-          <div class="flex items-center gap-2">
-            <span class="font-bold text-xl text-slate-900 dark:text-white tracking-tight">
-              Yodi Irawan (awanbeo)
-            </span>
+  <footer class="border-t border-hairline-light dark:border-hairline-dark py-16 bg-canvas-light dark:bg-canvas-dark text-xs font-mono transition-colors">
+    <div class="max-w-6xl mx-auto px-6 space-y-12">
+      
+      <!-- Top Row -->
+      <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-8">
+        <div class="space-y-2 max-w-md">
+          <div class="text-stone-950 dark:text-stone-50 font-sans font-semibold text-sm">
+            Yodi Irawan (awanbeo)
           </div>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed max-w-md">
-            Full Stack Web Developer & Lulusan Pendidikan TIK. Berdedikasi membantu digitalisasi sistem sekolah, faskes/institusi daerah, dan automasi bisnis dengan aplikasi web yang andal dan mudah digunakan.
+          <p class="text-stone-500 dark:text-stone-400 font-sans leading-relaxed text-xs">
+            Layanan rekayasa web dan konsultasi digitalisasi untuk sekolah, institusi daerah, dan bisnis lokal di Indonesia.
           </p>
-          <div class="flex items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
-            <MapPin class="w-4 h-4 text-slate-400" />
-            <span>Sarolangun, Jambi — Melayani proyek seluruh Indonesia</span>
-          </div>
         </div>
 
-        <!-- Quick Links -->
-        <div class="space-y-3">
-          <h4 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider">
-            Navigasi
-          </h4>
-          <ul class="space-y-2 text-sm">
-            <li>
-              <NuxtLink to="/#solusi" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Layanan & Solusi
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#proyek" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Showcase Proyek
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/#tentang" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Tentang Saya
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/blog" class="text-slate-600 dark:text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                Artikel & Blog
-              </NuxtLink>
-            </li>
-          </ul>
+        <!-- Social Text Links -->
+        <div class="flex flex-wrap items-center gap-6">
+          <a
+            v-for="s in socialLinks"
+            :key="s.label"
+            :href="s.href"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1 text-stone-600 dark:text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
+          >
+            <span>{{ s.label }}</span>
+            <ArrowUpRight class="w-3 h-3 stroke-[1.5]" />
+          </a>
         </div>
-
-        <!-- Social & Contact -->
-        <div class="space-y-3">
-          <h4 class="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider">
-            Terhubung
-          </h4>
-          <ul class="space-y-2.5">
-            <li v-for="social in socialLinks" :key="social.label">
-              <a
-                :href="social.href"
-                target="_blank"
-                rel="noopener noreferrer"
-                :class="['group flex items-center justify-between text-sm text-slate-600 dark:text-slate-400 transition-colors', social.color]"
-              >
-                <div class="flex items-center gap-2.5">
-                  <component :is="social.icon" class="w-4 h-4" />
-                  <span>{{ social.label }}</span>
-                </div>
-                <ArrowUpRight class="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-            </li>
-          </ul>
-        </div>
-
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="mt-12 pt-8 border-t border-slate-100 dark:border-slate-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500 dark:text-slate-400">
-        <p>© {{ currentYear }} awanbeo. Dirancang & dibangun dengan Nuxt 3 & Tailwind CSS.</p>
-        <p class="flex items-center gap-1">
-          Dibuat dengan <Heart class="w-3.5 h-3.5 text-rose-500 fill-rose-500" /> di Sarolangun, Jambi
-        </p>
+      <!-- Bottom Colophon -->
+      <div class="pt-8 border-t border-hairline-light dark:border-hairline-dark flex flex-col sm:flex-row items-baseline justify-between gap-4 text-stone-400 dark:text-stone-600 text-[11px]">
+        <div>
+          © {{ currentYear }} awanbeo. Sarolangun, Jambi — Indonesia.
+        </div>
+        <div>
+          Dibangun dengan Nuxt 3 & Tailwind CSS · Di-hosting di Cloudflare Pages.
+        </div>
       </div>
+
     </div>
   </footer>
 </template>
