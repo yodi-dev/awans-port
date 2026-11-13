@@ -19,10 +19,10 @@ const socialLinks = [
       <div class="flex flex-col md:flex-row md:items-baseline justify-between gap-8">
         <div class="space-y-2 max-w-md">
           <div class="text-navy-900 dark:text-navy-50 font-sans font-bold text-sm">
-            Yodi Irawan (awanbeo)
+            Yodi Irawan (Awan)
           </div>
           <p class="text-navy-600/70 dark:text-navy-400 font-sans leading-relaxed text-xs">
-            Layanan rekayasa web dan konsultasi digitalisasi untuk sekolah, institusi daerah, dan bisnis lokal di Indonesia.
+            Rekayasa web terpadu dan pendampingan digitalisasi untuk institusi pendidikan, pelayanan daerah, dan wirausaha lokal.
           </p>
         </div>
 
@@ -45,7 +45,7 @@ const socialLinks = [
       <!-- Bottom Colophon -->
       <div class="pt-8 border-t border-hairline-light dark:border-hairline-dark flex flex-col sm:flex-row items-baseline justify-between gap-4 text-navy-500/70 dark:text-navy-500 text-[11px]">
         <div>
-          © {{ currentYear }} awanbeo. Sarolangun, Jambi — Indonesia.
+          © {{ currentYear }} Yodi Irawan. Sarolangun, Jambi & Yogyakarta — Indonesia.
         </div>
         <div>
           Dibangun dengan Nuxt 3 & Tailwind CSS · Di-hosting di Cloudflare Pages.

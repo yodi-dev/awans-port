@@ -10,13 +10,11 @@ if (!post.value) {
   throw createError({ statusCode: 404, statusMessage: 'Artikel tidak ditemukan' })
 }
 
-useHead({
-  title: `${post.value?.title || 'Artikel'} | awanbeo`,
-  meta: [
-    { name: 'description', content: post.value?.description || '' },
-    { property: 'og:title', content: post.value?.title || '' },
-    { property: 'og:description', content: post.value?.description || '' }
-  ]
+useSeoMeta({
+  title: () => `${post.value?.title || 'Artikel'} | Yodi Irawan (Awan)`,
+  description: () => post.value?.description || '',
+  ogTitle: () => `${post.value?.title || 'Artikel'} | Yodi Irawan (Awan)`,
+  ogDescription: () => post.value?.description || ''
 })
 </script>
 

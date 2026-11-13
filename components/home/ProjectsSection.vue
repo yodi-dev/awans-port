@@ -29,15 +29,15 @@ const closeProjectModal = () => {
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-20 pb-8 border-b border-hairline-light dark:border-hairline-dark">
           <div class="lg:col-span-8 space-y-3">
             <span class="font-mono text-xs uppercase tracking-caps text-navy-500/80 dark:text-navy-400">
-              [ 02 — Karya Pilihan ]
+              [ 02 — Studi Kasus & Karya Terpilih ]
             </span>
             <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
-              Proyek & Studi Kasus
+              Bukti Rekayasa yang Telah Diuji di Lapangan
             </h2>
           </div>
           <div class="lg:col-span-4 lg:text-right">
             <p class="text-sm text-navy-600/70 dark:text-navy-400 leading-relaxed font-normal">
-              Setiap proyek dirancang untuk menyelesaikan kendala manusia di baliknya.
+              Karya nyata yang memecahkan masalah operasional nyata, dari institusi pendidikan kejuruan hingga toko ritel lokal.
             </p>
           </div>
         </div>

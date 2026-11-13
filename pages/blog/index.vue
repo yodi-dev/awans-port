@@ -6,14 +6,9 @@ const { data: posts } = await useAsyncData('blog', () =>
   queryContent('blog').sort({ date: -1 }).find()
 )
 
-useHead({
-  title: 'Jurnal & Catatan Digitalisasi | awanbeo',
-  meta: [
-    {
-      name: 'description',
-      content: 'Esai, panduan digitalisasi sekolah, serta refleksi teknis seputar pembuatan aplikasi web fungsional oleh Yodi Irawan (awanbeo).'
-    }
-  ]
+useSeoMeta({
+  title: 'Jurnal & Catatan Digitalisasi | Yodi Irawan (Awan)',
+  description: 'Esai, panduan tata kelola sistem sekolah, digitalisasi desa, serta catatan teknis rekayasa web oleh Yodi Irawan (Awan).'
 })
 </script>
 

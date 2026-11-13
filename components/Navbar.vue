@@ -12,7 +12,7 @@ const navLinks = [
   { label: 'Solusi', href: '/#solusi' },
   { label: 'Karya', href: '/#proyek' },
   { label: 'Tentang', href: '/#tentang' },
-  { label: 'Jurnal / Blog', href: '/blog' },
+  { label: 'Jurnal', href: '/blog' },
 ]
 </script>
 
@@ -26,7 +26,7 @@ const navLinks = [
           Yodi Irawan
         </span>
         <span class="font-mono text-xs text-navy-600/60 dark:text-navy-400/60">
-          / awanbeo
+          / web engineer
         </span>
       </NuxtLink>
 
@@ -59,12 +59,12 @@ const navLinks = [
 
         <!-- Direct Contact Action -->
         <a
-          href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20website/aplikasi."
+          href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berkonsultasi%20mengenai%20pembuatan%20sistem%20web."
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-1.5 text-xs font-mono font-medium tracking-tight text-navy-900 dark:text-navy-100 hover:text-navy-600 dark:hover:text-navy-300 transition-colors group"
         >
-          <span>Mulai Diskusi</span>
+          <span>Konsultasi Proyek</span>
           <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5] group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform duration-200" />
         </a>
       </div>
@@ -110,12 +110,12 @@ const navLinks = [
 
       <div class="pt-4 border-t border-hairline-light dark:border-hairline-dark">
         <a
-          href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20konsultasi%20mengenai%20proyek%20website/aplikasi."
+          href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berkonsultasi%20mengenai%20pembuatan%20sistem%20web."
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-1.5 text-sm font-mono font-medium text-navy-900 dark:text-navy-100"
         >
-          <span>Mulai Diskusi via WhatsApp</span>
+          <span>Konsultasi via WhatsApp</span>
           <ArrowUpRight class="w-4 h-4 stroke-[1.5]" />
         </a>
       </div>

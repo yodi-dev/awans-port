@@ -29,7 +29,7 @@ const stackCategories = [
               [ 03 — Latar Belakang & Filosofi ]
             </span>
             <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
-              Teknologi Tanpa Kerumitan
+              Teknologi yang Memanusiakan Pengguna
             </h2>
           </div>
           <div class="lg:col-span-4 lg:text-right">
@@ -47,13 +47,13 @@ const stackCategories = [
           <!-- Left: Personal Story & Manifesto -->
           <div class="lg:col-span-7 space-y-6 text-navy-800 dark:text-navy-200 text-base sm:text-lg leading-relaxed font-normal">
             <p>
-              Berakar di Sumatera dan menyelesaikan studi di bidang <strong>Pendidikan Teknologi Informasi & Komunikasi (Pendidikan TIK)</strong>, saya melihat bahwa kegagalan adopsi sistem digital di sekolah atau daerah jarang disebabkan oleh keterbatasan teknologi.
+              Menyelesaikan studi di bidang <strong>Pendidikan Teknologi Informasi & Komunikasi (Pendidikan TIK)</strong> dan berakar di Sumatera serta beraktivitas di Yogyakarta, saya melihat bahwa kegagalan adopsi sistem digital di sekolah atau daerah jarang disebabkan oleh keterbatasan teknologi.
             </p>
             <p>
-              Masalah utamanya hampir selalu sama: sistem yang dirancang terlalu rumit bagi staf lapangan, proses pelatihan yang minim, atau pengembang yang sulit diajak berkomunikasi menggunakan bahasa sehari-hari.
+              Masalah utamanya hampir selalu sama: sistem yang dirancang terlalu rumit bagi staf lapangan, proses pelatihan yang minim, dan kebiasaan pengembang yang sulit diajak berkomunikasi menggunakan bahasa sehari-hari.
             </p>
             <p class="text-navy-600 dark:text-navy-400 text-sm sm:text-base">
-              Oleh sebab itu, dalam setiap proyek saya memegang tiga prinsip: <em>menghilangkan friksi pengguna awam</em>, <em>menjaga arsitektur kode tetap bersih dan terdokumentasi</em>, serta <em>memberikan pendampingan hingga sistem benar-benar berjalan mandiri</em>.
+              Sebagai solo software engineer, saya memegang tiga prinsip: <em>menghilangkan friksi bagi pengguna awam</em>, <em>menjaga arsitektur kode tetap bersih dan mandiri</em>, serta <em>memberikan pendampingan langsung hingga sistem benar-benar berjalan alami dalam keseharian operasional.</em>
             </p>
           </div>
 
@@ -87,7 +87,7 @@ const stackCategories = [
 
               <!-- Base Note -->
               <div class="pt-6 border-t border-hairline-light dark:border-hairline-dark text-xs font-mono text-navy-500/80 dark:text-navy-400 space-y-1">
-                <div>LOKASI: Sarolangun, Jambi — Indonesia</div>
+                <div>LOKASI: Sarolangun, Jambi & D.I. Yogyakarta — Indonesia</div>
                 <div>METODE: Daring (Remote) / Kunjungan Lapangan Berdasarkan Kesepakatan</div>
               </div>
             </div>

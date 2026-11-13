@@ -6,14 +6,20 @@ const channels = [
   {
     label: 'WhatsApp Langsung',
     value: '+62 851-8331-0065',
-    href: 'https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berdiskusi%20tentang%20proyek%20aplikasi%20web.',
-    description: 'Respon cepat untuk pertanyaan awal, jadwal diskusi, atau konsultasi singkat.'
+    href: 'https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berkonsultasi%20mengenai%20pembuatan%20sistem%20web.',
+    description: 'Respon cepat untuk pertanyaan awal, jadwal diskusi, atau konsultasi kebutuhan.'
   },
   {
     label: 'Surat Elektronik',
     value: 'irawanyodi10@gmail.com',
     href: 'mailto:irawanyodi10@gmail.com?subject=Inquiry%20Proyek%20Website',
     description: 'Untuk pengiriman kerangka acuan kerja (TOR), proposal resmi, atau dokumen proyek.'
+  },
+  {
+    label: 'Repositori GitHub',
+    value: 'github.com/yodi-dev',
+    href: 'https://github.com/yodi-dev',
+    description: 'Eksplorasi kode sumber terbuka dan arsitektur proyek nyata.'
   },
   {
     label: 'LinkedIn',
@@ -35,10 +41,10 @@ const channels = [
             [ 04 — Kontak & Kolaborasi ]
           </span>
           <h2 class="text-3xl sm:text-5xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial leading-tight">
-            Punya rencana sistem baru untuk sekolah atau lembaga Anda?
+            Punya alur kerja yang ingin dipermudah di sekolah, desa, atau usaha Anda?
           </h2>
           <p class="text-base sm:text-lg text-navy-700/80 dark:text-navy-300/80 leading-relaxed font-normal">
-            Tidak perlu khawatir jika kebutuhan Anda belum terstruktur secara teknis. Kita bisa mulai dengan memetakan alur kerja yang ingin dipermudah.
+            Anda tidak perlu menyusun dokumen teknis yang rumit. Cukup ceritakan bagaimana alur kerja Anda berjalan hari ini, dan mari kita petakan solusinya bersama secara bertahap.
           </p>
         </div>
       </FadeIn>

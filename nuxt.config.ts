@@ -33,16 +33,16 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'id'
       },
-      title: "Yodi Irawan (awanbeo) | Web Solutions & Developer",
+      title: "Yodi Irawan (Awan) | Rekayasa Web & Solusi Digital Mandiri",
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
         {
           name: 'description',
-          content: 'Layanan pengembangan website & aplikasi web terpercaya untuk sekolah, institusi daerah, dan bisnis oleh Yodi Irawan (awanbeo).'
+          content: 'Solo software engineer berlatar belakang Pendidikan TIK. Membangun sistem web terpadu, mandiri, dan ramah pengguna awam untuk institusi pendidikan, daerah, dan bisnis lokal.'
         },
-        { property: 'og:title', content: "Yodi Irawan (awanbeo) | Web Solutions & Developer" },
-        { property: 'og:description', content: 'Layanan pengembangan website & aplikasi web terpercaya untuk sekolah, institusi daerah, dan bisnis.' },
+        { property: 'og:title', content: "Yodi Irawan (Awan) | Rekayasa Web & Solusi Digital Mandiri" },
+        { property: 'og:description', content: 'Membangun sistem web terpadu, mandiri, dan ramah pengguna awam untuk institusi pendidikan, daerah, dan bisnis lokal.' },
         { property: 'og:type', content: 'website' }
       ],
       link: [

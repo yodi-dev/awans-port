@@ -25,40 +25,115 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'perpustakaan-digital',
-    title: 'Sistem Informasi Perpustakaan Digital',
-    subtitle: 'Manajemen sirkulasi buku, katalog digital, dan pelaporan otomatis sekolah',
+    id: 'sipensi-skagata',
+    title: 'Sipensi Skagata',
+    subtitle: 'Sistem informasi presensi dan piket KBM untuk mahasiswa PK, PPL, dan Guru Tidak Tetap',
     category: 'Pendidikan & Sekolah',
-    badge: 'Sistem Sekolah',
+    badge: 'Adopsi Menyeluruh Sekolah',
     banner: '/images/perpus/banner.png',
     clientView: {
-      targetAudience: 'Sekolah Menengah (SMK/SMA/SMP), Pesantren, dan Rumah Baca',
-      problem: 'Pencatatan manual di buku besar rawan kehilangan aset buku, antrean panjang saat jam istirahat, dan pembuatan laporan akreditasi yang memakan waktu berminggu-minggu.',
-      solution: 'Aplikasi berbasis web yang mendigitalkan seluruh siklus perpustakaan: mulai dari pencarian buku online, scan peminjaman cepat, perhitungan denda otomatis, hingga laporan rekap sekali klik.',
+      targetAudience: 'SMK Negeri 3 Yogyakarta, Mahasiswa Praktikan (PK & PPG), dan Guru Tidak Tetap',
+      problem: 'Pencatatan presensi manual praktikan dan guru pembimbing KBM sering tercecer, rawan manipulasi jam hadir, dan menyulitkan pihak sekolah saat menyusun laporan kedinasan bulanan.',
+      solution: 'Sistem presensi digital berbasis geofencing GPS real-time dan dokumentasi piket KBM otomatis. Awalnya diuji coba di Jurusan Informatika, pihak sekolah kemudian memperluas penggunaannya ke seluruh jurusan di SMKN 3 Yogyakarta.',
       keyBenefits: [
-        'Pencarian katalog buku instan oleh siswa via ponsel/laptop',
-        'Mengurangi risiko buku hilang dengan pelacakan peminjam yang akurat',
-        'Otomatisasi denda keterlambatan dan status ketersediaan buku',
-        'Ekspor laporan sirkulasi dan statistik pengunjung siap cetak'
+        'Penegakan radius presensi GPS Geofencing (Formula Haversine) di area sekolah',
+        'Dokumentasi piket KBM otomatis dengan kompresi gambar sisi klien & watermark kedinasan',
+        'Laporan bulanan siap cetak berkop resmi dinas SMKN 3 Yogyakarta dan ekspor Excel',
+        'Adopsi organik sukses dari satu jurusan meluas ke seluruh jurusan sekolah'
       ]
     },
     techView: {
-      stack: ['Laravel', 'MySQL', 'Bootstrap', 'JavaScript'],
-      architecture: 'Model-View-Controller (MVC) dengan Role-Based Access Control (Admin, Petugas, Anggota Siswa).',
+      stack: ['CodeIgniter 4', 'PHP 8.2', 'MySQL', 'Leaflet.js', 'HTML5 Canvas'],
+      architecture: 'Solo Developer. Modular MVC Architecture dengan Geofencing Engine, Dynamic School Schedule Sync, dan 44 Automated Integration Tests (100% Pass).',
       technicalHighlights: [
-        'Database relationship kompleks untuk sirkulasi buku, denda bertingkat, dan multi-kategori',
-        'Form validasi ketat untuk menghindari double-booking dan bentrok data inventaris',
-        'Data table pagination dan filtering untuk ribuan judul buku'
+        '44 automated tests mencakup proteksi peran, sanitasi XSS/SQL Injection, dan toleransi darurat',
+        'Peta Leaflet.js interaktif untuk kalibrasi radius geofence (10m - 1000m) admin',
+        'Kompresi kamera sisi klien via HTML5 Canvas menghemat kuota dan memori server'
       ]
     },
     links: {
-      github: 'https://github.com/yodi-dev/perpus-smk'
+      github: 'https://github.com/yodi-dev/sipensi-skagata'
     },
     screenshots: [
+      '/images/perpus/banner.png',
       '/images/perpus/ss1.png',
-      '/images/perpus/ss2.png',
-      '/images/perpus/ss3.png',
-      '/images/perpus/ss4.png'
+      '/images/perpus/ss2.png'
+    ]
+  },
+  {
+    id: 'sibenka-skagata',
+    title: 'Sibenka Skagata',
+    subtitle: 'Pencatatan inventaris digital dan sirkulasi peminjaman alat bengkel kejuruan SMK',
+    category: 'Pendidikan & Sekolah',
+    badge: 'Lead Developer',
+    banner: '/images/sibenka/pinjam.jpg',
+    clientView: {
+      targetAudience: 'SMK Negeri 3 Yogyakarta (Seluruh Bengkel & Laboratorium Kejuruan)',
+      problem: 'Peralatan praktik kejuruan sering tertukar atau hilang, sirkulasi peminjaman alat antar-bengkel tidak terdokumentasi rapi, dan pelaporan kondisi alat rusak memakan waktu lama.',
+      solution: 'Sistem inventarisasi aset digital dan manajemen sirkulasi alat praktik bertingkat dengan alur persetujuan toolman dan rekap kartu stok otomatis.',
+      keyBenefits: [
+        'Pelacakan lokasi dan status ketersediaan alat di setiap bengkel secara akurat',
+        'Alur peminjaman & pengembalian tertib dengan bukti tanda terima sistem',
+        'Laporan mutasi alat, inventaris rusak, dan kartu barang siap ekspor berkala',
+        'Meminimalisir kerugian anggaran sekolah akibat alat praktik yang hilang'
+      ]
+    },
+    techView: {
+      stack: ['Laravel', 'MySQL', 'Tailwind CSS', 'Blade'],
+      architecture: 'Lead Developer & Client Liaison. Perancangan skema database inventaris multi-bengkel, alur sirkulasi alat bertingkat, dan pengujian keandalan bersama guru kejuruan.',
+      technicalHighlights: [
+        'Relasi database kompleks untuk tracking mutasi aset antar-bengkel kejuruan',
+        'Validasi sirkulasi ketat guna mencegah bentrok data antar-laboratorium',
+        'Hak akses multi-peran: Superadmin, Toolman/Kepala Bengkel, dan Siswa Peminjam'
+      ]
+    },
+    links: {
+      github: 'https://github.com/yodi-dev/sibenka-skagata'
+    },
+    screenshots: [
+      '/images/sibenka/pinjam.jpg',
+      '/images/sibenka/kembali.jpg'
+    ]
+  },
+  {
+    id: 'pos-habiba-store',
+    title: 'POS App - Habiba Store',
+    subtitle: 'Solusi kasir modern dan manajemen stok real-time untuk toko ritel & UMKM',
+    category: 'Bisnis & UMKM',
+    badge: 'Point of Sale Mandiri',
+    banner: '/images/shop/banner.png',
+    clientView: {
+      targetAudience: 'Toko Kelontong Modern, Toko Fashion, Distributor/Grosir, & UMKM Ritel',
+      problem: 'Pemilik toko kesulitan memantau sisa stok barang, antrean kasir lambat, dan terbebani biaya langganan software kasir bulanan yang memotong margin usaha.',
+      solution: 'Aplikasi kasir web modern yang responsif dan cepat memproses transaksi pelanggan tanpa perlu membayar biaya sewa software atau potongan komisi transaksi.',
+      keyBenefits: [
+        'Proses checkout kasir cepat tanpa loading halaman lambat',
+        'Peringatan otomatis saat stok barang mulai menipis di gudang',
+        'Laporan laba kotor harian dan produk terlaris (best-seller) transparan',
+        'Dapat dioperasikan melalui tablet kasir maupun laptop toko'
+      ]
+    },
+    techView: {
+      stack: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'],
+      architecture: 'Single-Page Application (SPA) experience memanfaatkan Laravel Livewire untuk reaktivitas instan tanpa setup API terpisah.',
+      technicalHighlights: [
+        'Komponen keranjang belanja interaktif berbasis event-driven Livewire',
+        'Kueri kalkulasi total & diskon instan secara realtime di sisi server',
+        'Desain antarmuka mobile-first yang nyaman untuk kasir layar sentuh'
+      ]
+    },
+    links: {
+      demo: 'https://demo.habiba-store.my.id/',
+      github: 'https://github.com/yodi-dev/pos-app'
+    },
+    screenshots: [
+      '/images/shop/ss1.png',
+      '/images/shop/ss2.png',
+      '/images/shop/ss3.png',
+      '/images/shop/ss4.png',
+      '/images/shop/ss5.png',
+      '/images/shop/ss6.png',
+      '/images/shop/ss7.png'
     ]
   },
   {
@@ -70,7 +145,7 @@ export const projects: Project[] = [
     banner: '/images/kam/banner.png',
     clientView: {
       targetAudience: 'Klinik Pratama, Puskesmas Pembantu, Praktek Bersama Nakes',
-      problem: 'Alur antrean berdesakan, berkas rekam medis kertas yang rawan terselip, dan penghitungan stok obat apotek serta rekap kas harian yang belum sinkron.',
+      problem: 'Alur antrean berdesakan, berkas rekam medis kertas rawan terselip, dan penghitungan stok obat apotek serta rekap kas harian belum sinkron.',
       solution: 'Sistem informasi manajemen klinik terpadu dari loket pendaftaran, ruang periksa dokter (rekam medis), apotek/farmasi, hingga kasir pembayaran.',
       keyBenefits: [
         'Alur pendaftaran pasien tertib dan riwayat kunjungan tersimpan rapi',
@@ -101,46 +176,5 @@ export const projects: Project[] = [
       '/images/kam/ss7.png',
       '/images/kam/ss8.png'
     ]
-  },
-  {
-    id: 'pos-habiba-store',
-    title: 'POS App - Habiba Store (Aplikasi Kasir & Stok)',
-    subtitle: 'Solusi kasir modern dan manajemen stok real-time untuk toko ritel & UMKM',
-    category: 'Bisnis & UMKM',
-    badge: 'Point of Sale',
-    banner: '/images/shop/banner.png',
-    clientView: {
-      targetAudience: 'Toko Kelontong Modern, Toko Fashion, Distributor/Grosir, & UMKM Ritel',
-      problem: 'Pemilik toko kesulitan memantau sisa stok barang, rawan kecurangan kasir, dan tidak mengetahui barang mana yang paling laris atau rugi.',
-      solution: 'Aplikasi kasir web modern yang responsif, cepat memproses transaksi pelanggan, dan menyajikan dashboard performa omzet harian secara langsung.',
-      keyBenefits: [
-        'Proses checkout kasir cepat tanpa loading halaman lambat',
-        'Peringatan otomatis saat stok barang mulai menipis',
-        'Laporan laba kotor harian dan produk terlaris (best-seller)',
-        'Dapat dioperasikan melalui tablet kasir maupun laptop toko'
-      ]
-    },
-    techView: {
-      stack: ['Laravel', 'Livewire', 'Tailwind CSS', 'Alpine.js'],
-      architecture: 'Single-Page Application (SPA) experience memanfaatkan Laravel Livewire untuk reaktivitas tinggi tanpa setup API terpisah.',
-      technicalHighlights: [
-        'Komponen keranjang belanja interaktif berbasis event-driven Livewire',
-        'Kueri kalkulasi total & diskon instan secara realtime di sisi server',
-        'Desain antarmuka mobile-first yang nyaman untuk kasir layar sentuh'
-      ]
-    },
-    links: {
-      demo: 'https://demo.habiba-store.my.id/'
-    },
-    screenshots: [
-      '/images/shop/ss1.png',
-      '/images/shop/ss2.png',
-      '/images/shop/ss3.png',
-      '/images/shop/ss4.png',
-      '/images/shop/ss5.png',
-      '/images/shop/ss6.png',
-      '/images/shop/ss7.png'
-    ]
   }
 ]
-

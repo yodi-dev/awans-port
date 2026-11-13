@@ -6,40 +6,40 @@ const solutions = [
   {
     index: '01',
     category: 'Sistem Pendidikan',
-    title: 'Digitalisasi Sekolah & Perpustakaan',
+    title: 'Digitalisasi Sekolah & Kejuruan (SMK/SMA/SMP)',
     description:
-      'Membantu institusi pendidikan (SMK/SMA/SMP, Madrasah, dan Rumah Baca) beralih dari pencatatan manual berbelit ke sistem terpadu yang memangkas waktu kerja guru dan staf.',
+      'Membantu institusi pendidikan beralih dari pencatatan manual yang rawan kehilangan aset menjadi sistem terpadu yang memangkas waktu kerja guru dan staf operasional.',
     scope: [
-      'Sistem Informasi Perpustakaan & Pelacakan Sirkulasi Buku',
-      'Katalog Buku Digital Siswa & Otomasi Denda Keterlambatan',
-      'Website Profil Sekolah & Portal Informasi Siswa',
-      'Sistem Pendaftaran Siswa Baru (PPDB Online)'
+      'Sistem Inventarisasi Alat & Sirkulasi Peminjaman Bengkel Kejuruan',
+      'Sistem Presensi Digital Mahasiswa PK/PPL & Guru Tidak Tetap',
+      'Portal Informasi Perpustakaan & Pelacakan Sirkulasi Buku Otomatis',
+      'Website Profil Sekolah & Portal Pendaftaran Siswa (PPDB Online)'
     ]
   },
   {
     index: '02',
     category: 'Layanan Publik',
-    title: 'Sistem Informasi Institusi & Faskes Daerah',
+    title: 'Portal Informasi Desa & Faskes Daerah',
     description:
-      'Merancang sistem informasi manajemen terstruktur untuk fasilitas kesehatan pratama, klinik swasta, dan organisasi pemerintahan tingkat desa yang memerlukan transparansi data.',
+      'Membangun sistem informasi terstruktur untuk fasilitas kesehatan pratama dan pemerintah desa yang memerlukan transparansi data dan promosi potensi lokal yang mandiri.',
     scope: [
-      'SIM Klinik Pratama: Pendaftaran, Rekam Medis & Kasir',
-      'Integrasi Stok Obat Farmasi & Kartu Stok Real-time',
-      'Website Profil Desa & Transparansi Anggaran Warga',
-      'Sistem Administrasi Persuratan & Inventarisasi Aset'
+      'Website Profil Desa & Promosi Potensi Desa Wisata',
+      'Portal Publikasi Transparansi Informasi & Administrasi Warga',
+      'SIM Klinik Pratama: Pendaftaran, Rekam Medis & Pembayaran',
+      'Integrasi Stok Obat Farmasi & Kartu Kendali Pasien'
     ]
   },
   {
     index: '03',
     category: 'Bisnis & UMKM',
-    title: 'Aplikasi Kasir (POS) & Manajemen Stok',
+    title: 'Aplikasi Kasir (POS) & Kontrol Stok Ritel',
     description:
-      'Solusi aplikasi web kasir berkecepatan tinggi untuk toko ritel dan wirausaha lokal. Mengontrol aliran uang kas, memantau sisa barang, dan menyajikan laporan laba harian tanpa biaya langganan software yang memberatkan.',
+      'Solusi aplikasi kasir berbasis web yang cepat dan responsif untuk toko ritel lokal. Mengontrol aliran uang kas dan stok menipis secara realtime tanpa potongan biaya langganan bulanan.',
     scope: [
-      'Point of Sale (POS) Kasir Cepat & Responsif Tablet/PC',
-      'Pencatatan Stok Masuk/Keluar & Peringatan Stok Menipis',
-      'Dashboard Rekap Laba/Rugi Harian & Produk Terlaris',
-      'Arsitektur Standalone Tanpa Biaya Sewa Bulanan'
+      'Point of Sale (POS) Kasir Cepat Ramah Tablet Layar Sentuh & PC',
+      'Pemantauan Stok Masuk/Keluar & Peringatan Otomatis Stok Menipis',
+      'Dashboard Laba/Rugi Harian & Laporan Produk Paling Laris',
+      'Arsitektur Mandiri Tanpa Potongan Biaya Transaksi Berulang'
     ]
   }
 ]
@@ -54,15 +54,15 @@ const solutions = [
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 pb-8 border-b border-hairline-light dark:border-hairline-dark">
           <div class="lg:col-span-8 space-y-3">
             <span class="font-mono text-xs uppercase tracking-caps text-navy-500/80 dark:text-navy-400">
-              [ 01 — Ruang Lingkup Layanan ]
+              [ 01 — Ruang Lingkup Solusi ]
             </span>
             <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
-              Solusi yang Dirancang untuk Kebutuhan Nyata
+              Sistem yang Dirancang untuk Kebutuhan Nyata Lapangan
             </h2>
           </div>
           <div class="lg:col-span-4 lg:text-right">
             <p class="text-sm text-navy-600/70 dark:text-navy-400 leading-relaxed font-normal">
-              Fokus pada sistem yang langsung memecahkan bottleneck operasional di lapangan.
+              Fokus memangkas waktu kerja administrasi dan mencegah hilangnya aset tanpa membebani kas operasional institusi.
             </p>
           </div>
         </div>
