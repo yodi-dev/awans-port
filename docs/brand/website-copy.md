@@ -20,9 +20,9 @@ Dokumen ini berisi draf lengkap seluruh salinan teks (*master copywriting*) untu
 ## 2. Homepage: Hero Section
 
 * **Headline Utama:**
-  > *"Membangun sistem web yang fungsional, ramah pengguna awam, dan siap pakai di lapangan."*
+  > *"Membangun sistem web yang fungsional dan ramah pengguna awam."*
 * **Subheadline / Bio:**
-  > *"Saya **Yodi Irawan (Awan)**. Memadukan latar belakang **Pendidikan TIK** dan rekayasa **Full Stack Web** untuk membantu sekolah, instansi daerah, dan usaha lokal memiliki sistem digital mandiri tanpa kerumitan teknis dan biaya langganan yang membebani."*
+  > *"Saya **Yodi Irawan (Awan)**, software engineer berlatar belakang **Pendidikan TIK**. Membantu sekolah, institusi daerah, dan UMKM memiliki sistem web yang mandiri, rapi, dan mudah digunakan staf lapangan."*
 * **Tombol Aksi (CTAs):**
   * Tombol Primer: `Lihat Karya Terpilih` *(Scroll ke `#proyek`)*
   * Tombol Sekunder: `Konsultasi Alur Kerja` *(Buka WhatsApp)*
@@ -184,4 +184,4 @@ Dokumen ini berisi draf lengkap seluruh salinan teks (*master copywriting*) untu
 
 * **Identitas:** `Yodi Irawan (Awan)`
 * **Pernyataan:** `Rekayasa web terpadu dan pendampingan digitalisasi untuk institusi pendidikan, pelayanan daerah, dan wirausaha lokal.`
-* **Hak Cipta:** `© 2026 Yodi Irawan. Sarolangun, Jambi & Yogyakarta — Indonesia. Dibangun dengan Nuxt 3 & Tailwind CSS · Di-hosting di Cloudflare Pages.`
+* **Hak Cipta:** `© 2026 Yodi Irawan. Sarolangun, Jambi & Yogyakarta — Indonesia.`

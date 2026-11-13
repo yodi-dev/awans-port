@@ -47,9 +47,6 @@ const socialLinks = [
         <div>
           © {{ currentYear }} Yodi Irawan. Sarolangun, Jambi & Yogyakarta — Indonesia.
         </div>
-        <div>
-          Dibangun dengan Nuxt 3 & Tailwind CSS · Di-hosting di Cloudflare Pages.
-        </div>
       </div>
 
     </div>
