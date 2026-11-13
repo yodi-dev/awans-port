@@ -22,4 +22,4 @@ Dengan menghadirkan sistem perpustakaan digital berbasis web:
 - **Otomasi Denda & Pengingat:** Petugas tidak perlu lagi menghitung keterlambatan secara manual.
 - **Laporan Instan 1-Klik:** Data kunjungan, buku paling diminati, dan riwayat sirkulasi dapat diekspor kapan saja untuk kebutuhan laporan resmi.
 
-Investasi pada sistem digital bukan hanya memodernisasi sekolah, tetapi juga menjaga aset literasi berharga milik generasi penerus.
+Investasi pada sistem digital bukan hanya memodernisasi sekolah, tetapi juga menjaga aset literasi berharga milik generasi penerus. Bagi institusi pendidikan yang sedang merencanakan digitalisasi serupa, Anda dapat mempelajari [ruang lingkup solusi sistem sekolah kami](/#solusi) atau menelaah studi kasus nyata pada [proyek rekayasa sistem informasi sekolah](/#proyek).

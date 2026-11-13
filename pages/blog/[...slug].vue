@@ -14,7 +14,78 @@ useSeoMeta({
   title: () => `${post.value?.title || 'Artikel'} | Yodi Irawan (Awan)`,
   description: () => post.value?.description || '',
   ogTitle: () => `${post.value?.title || 'Artikel'} | Yodi Irawan (Awan)`,
-  ogDescription: () => post.value?.description || ''
+  ogDescription: () => post.value?.description || '',
+  ogType: 'article',
+  ogUrl: () => `https://awanbeo.my.id${route.path}`,
+  ogImage: 'https://awanbeo.my.id/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://awanbeo.my.id/og-image.png',
+  articlePublishedTime: () => post.value?.date,
+  articleAuthor: ['Yodi Irawan']
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: `https://awanbeo.my.id${route.path}` }
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: computed(() =>
+        JSON.stringify({
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'BlogPosting',
+              '@id': `https://awanbeo.my.id${route.path}#article`,
+              'headline': post.value?.title,
+              'description': post.value?.description,
+              'datePublished': post.value?.date,
+              'dateModified': post.value?.date,
+              'mainEntityOfPage': `https://awanbeo.my.id${route.path}`,
+              'inLanguage': 'id-ID',
+              'image': 'https://awanbeo.my.id/og-image.png',
+              'author': {
+                '@type': 'Person',
+                'name': 'Yodi Irawan',
+                'alternateName': 'Awan',
+                'url': 'https://awanbeo.my.id/'
+              },
+              'publisher': {
+                '@type': 'Person',
+                'name': 'Yodi Irawan',
+                'url': 'https://awanbeo.my.id/'
+              }
+            },
+            {
+              '@type': 'BreadcrumbList',
+              '@id': `https://awanbeo.my.id${route.path}#breadcrumb`,
+              'itemListElement': [
+                {
+                  '@type': 'ListItem',
+                  'position': 1,
+                  'name': 'Beranda',
+                  'item': 'https://awanbeo.my.id/'
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 2,
+                  'name': 'Jurnal',
+                  'item': 'https://awanbeo.my.id/blog'
+                },
+                {
+                  '@type': 'ListItem',
+                  'position': 3,
+                  'name': post.value?.title,
+                  'item': `https://awanbeo.my.id${route.path}`
+                }
+              ]
+            }
+          ]
+        })
+      )
+    }
+  ]
 })
 </script>
 

@@ -70,9 +70,9 @@ const stackCategories = [
                   :key="cat.name"
                   class="space-y-2.5"
                 >
-                  <h4 class="font-mono text-xs text-navy-900 dark:text-navy-100 font-bold uppercase tracking-caps">
+                  <h3 class="font-mono text-xs text-navy-900 dark:text-navy-100 font-bold uppercase tracking-caps">
                     {{ cat.name }}
-                  </h4>
+                  </h3>
                   <div class="flex flex-wrap gap-x-3 gap-y-1.5 text-xs font-mono text-navy-600/80 dark:text-navy-400">
                     <span
                       v-for="skill in cat.skills"

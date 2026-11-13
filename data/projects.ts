@@ -142,7 +142,7 @@ export const projects: Project[] = [
     subtitle: 'Sistem manajemen terintegrasi untuk klinik pratama & fasilitas kesehatan daerah',
     category: 'Layanan & Institusi Daerah',
     badge: 'Kesehatan Daerah',
-    banner: '/images/kam/banner.png',
+    banner: '/images/kam/banner.jpg',
     clientView: {
       targetAudience: 'Klinik Pratama, Puskesmas Pembantu, Praktek Bersama Nakes',
       problem: 'Alur antrean berdesakan, berkas rekam medis kertas rawan terselip, dan penghitungan stok obat apotek serta rekap kas harian belum sinkron.',

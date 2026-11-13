@@ -8,7 +8,19 @@ const { data: posts } = await useAsyncData('blog', () =>
 
 useSeoMeta({
   title: 'Jurnal & Catatan Digitalisasi | Yodi Irawan (Awan)',
-  description: 'Esai, panduan tata kelola sistem sekolah, digitalisasi desa, serta catatan teknis rekayasa web oleh Yodi Irawan (Awan).'
+  description: 'Esai, panduan tata kelola sistem sekolah, digitalisasi desa, serta catatan teknis rekayasa web oleh Yodi Irawan (Awan).',
+  ogTitle: 'Jurnal & Catatan Digitalisasi | Yodi Irawan (Awan)',
+  ogDescription: 'Esai, panduan tata kelola sistem sekolah, digitalisasi desa, serta catatan teknis rekayasa web oleh Yodi Irawan (Awan).',
+  ogUrl: 'https://awanbeo.my.id/blog',
+  ogImage: 'https://awanbeo.my.id/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://awanbeo.my.id/og-image.png'
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://awanbeo.my.id/blog' }
+  ]
 })
 </script>
 

@@ -55,8 +55,14 @@ import { ArrowDownRight, ArrowUpRight } from '@lucide/vue'
         <div class="lg:col-span-4 space-y-6 animate-fade-up [animation-delay:200ms]">
           <div
             class="relative overflow-hidden rounded-2xl border border-hairline-light dark:border-hairline-dark bg-navy-100/50 dark:bg-navy-950/60 group shadow-sm">
-            <img src="/images/profil.png" alt="Yodi Irawan"
-              class="w-full aspect-[4/5] object-cover filter grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700 ease-out" />
+            <img
+              src="/images/profil.png"
+              alt="Foto Profil Yodi Irawan (Awan) - Solo Software Engineer"
+              width="400"
+              height="500"
+              fetchpriority="high"
+              class="w-full aspect-[4/5] object-cover filter grayscale contrast-[1.05] group-hover:grayscale-0 group-hover:scale-[1.02] transition-all duration-700 ease-out"
+            />
           </div>
 
           <!-- Metadata List -->
