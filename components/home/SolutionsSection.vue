@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ArrowUpRight } from '@lucide/vue'
+import FadeIn from '~/components/common/FadeIn.vue'
 
 const solutions = [
   {
@@ -49,78 +50,84 @@ const solutions = [
     <div class="max-w-6xl mx-auto px-6">
       
       <!-- Section Header -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 pb-8 border-b border-hairline-light dark:border-hairline-dark">
-        <div class="lg:col-span-8 space-y-3">
-          <span class="font-mono text-xs uppercase tracking-caps text-stone-400 dark:text-stone-500">
-            [ 01 — Ruang Lingkup Layanan ]
-          </span>
-          <h2 class="text-3xl sm:text-4xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
-            Solusi yang Dirancang untuk Kebutuhan Nyata
-          </h2>
+      <FadeIn>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 pb-8 border-b border-hairline-light dark:border-hairline-dark">
+          <div class="lg:col-span-8 space-y-3">
+            <span class="font-mono text-xs uppercase tracking-caps text-navy-500/80 dark:text-navy-400">
+              [ 01 — Ruang Lingkup Layanan ]
+            </span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
+              Solusi yang Dirancang untuk Kebutuhan Nyata
+            </h2>
+          </div>
+          <div class="lg:col-span-4 lg:text-right">
+            <p class="text-sm text-navy-600/70 dark:text-navy-400 leading-relaxed font-normal">
+              Fokus pada sistem yang langsung memecahkan bottleneck operasional di lapangan.
+            </p>
+          </div>
         </div>
-        <div class="lg:col-span-4 lg:text-right">
-          <p class="text-sm text-stone-500 dark:text-stone-400 leading-relaxed font-normal">
-            Fokus pada sistem yang langsung memecahkan bottleneck operasional di lapangan.
-          </p>
-        </div>
-      </div>
+      </FadeIn>
 
-      <!-- Architectural List (De-card-ified) -->
+      <!-- Architectural List (De-card-ified with scroll entrance) -->
       <div class="divide-y divide-hairline-light dark:divide-hairline-dark">
         <article
-          v-for="item in solutions"
+          v-for="(item, idx) in solutions"
           :key="item.index"
-          class="py-12 md:py-16 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 group"
+          class="py-12 md:py-16 transition-colors px-4 -mx-4 rounded-2xl hover:bg-navy-50/30 dark:hover:bg-navy-950/20 group"
         >
-          <!-- Column 1: Index Number & Category -->
-          <div class="lg:col-span-3 space-y-2">
-            <span class="font-mono text-2xl font-light text-stone-300 dark:text-stone-700 block">
-              {{ item.index }}
-            </span>
-            <span class="font-mono text-xs uppercase tracking-caps text-stone-500 dark:text-stone-400">
-              {{ item.category }}
-            </span>
-          </div>
+          <FadeIn :delay="idx * 120">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+              <!-- Column 1: Index Number & Category -->
+              <div class="lg:col-span-3 space-y-2">
+                <span class="font-mono text-2xl font-light text-navy-300 dark:text-navy-700 block group-hover:text-navy-900 dark:group-hover:text-navy-200 transition-colors">
+                  {{ item.index }}
+                </span>
+                <span class="font-mono text-xs uppercase tracking-caps text-navy-600 dark:text-navy-400 font-medium">
+                  {{ item.category }}
+                </span>
+              </div>
 
-          <!-- Column 2: Main Title & Purpose -->
-          <div class="lg:col-span-5 space-y-4">
-            <h3 class="text-xl sm:text-2xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
-              {{ item.title }}
-            </h3>
-            <p class="text-stone-600 dark:text-stone-400 text-sm sm:text-base leading-relaxed">
-              {{ item.description }}
-            </p>
-            <div class="pt-2">
-              <a
-                href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berdiskusi%20tentang%20solusi%20ini."
-                target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-xs font-mono text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
-              >
-                <span>Konsultasi kebutuhan ini</span>
-                <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5]" />
-              </a>
-            </div>
-          </div>
+              <!-- Column 2: Main Title & Purpose -->
+              <div class="lg:col-span-5 space-y-4">
+                <h3 class="text-xl sm:text-2xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial group-hover:text-navy-700 dark:group-hover:text-navy-200 transition-colors">
+                  {{ item.title }}
+                </h3>
+                <p class="text-navy-700/80 dark:text-navy-300/80 text-sm sm:text-base leading-relaxed">
+                  {{ item.description }}
+                </p>
+                <div class="pt-2">
+                  <a
+                    href="https://wa.me/6285183310065?text=Halo%20Awan,%20saya%20tertarik%20berdiskusi%20tentang%20solusi%20ini."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-1.5 text-xs font-mono text-navy-600 dark:text-navy-400 hover:text-navy-950 dark:hover:text-white transition-colors group/link"
+                  >
+                    <span class="underline underline-offset-4">Konsultasi kebutuhan ini</span>
+                    <ArrowUpRight class="w-3.5 h-3.5 stroke-[1.5] group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5 transition-transform" />
+                  </a>
+                </div>
+              </div>
 
-          <!-- Column 3: Scope Breakdown -->
-          <div class="lg:col-span-4">
-            <div class="space-y-2.5 pt-1">
-              <span class="font-mono text-[11px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block mb-3">
-                Ruang Lingkup Solusi:
-              </span>
-              <ul class="space-y-2 text-xs text-stone-600 dark:text-stone-300">
-                <li
-                  v-for="scopeItem in item.scope"
-                  :key="scopeItem"
-                  class="flex items-start gap-2.5"
-                >
-                  <span class="text-stone-300 dark:text-stone-600 font-mono select-none">―</span>
-                  <span class="leading-relaxed">{{ scopeItem }}</span>
-                </li>
-              </ul>
+              <!-- Column 3: Scope Breakdown -->
+              <div class="lg:col-span-4">
+                <div class="space-y-2.5 pt-1">
+                  <span class="font-mono text-[11px] uppercase tracking-caps text-navy-500/70 dark:text-navy-500 block mb-3 font-semibold">
+                    Ruang Lingkup Solusi:
+                  </span>
+                  <ul class="space-y-2 text-xs text-navy-700 dark:text-navy-300">
+                    <li
+                      v-for="scopeItem in item.scope"
+                      :key="scopeItem"
+                      class="flex items-start gap-2.5"
+                    >
+                      <span class="text-navy-400 dark:text-navy-600 font-mono select-none">―</span>
+                      <span class="leading-relaxed">{{ scopeItem }}</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
+          </FadeIn>
         </article>
       </div>
 

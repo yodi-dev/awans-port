@@ -67,34 +67,34 @@ onUnmounted(() => {
 <template>
   <Teleport to="body">
     <Transition
-      enter-active-class="transition duration-200 ease-out"
+      enter-active-class="transition duration-300 ease-out"
       enter-from-class="opacity-0"
       enter-to-class="opacity-100"
-      leave-active-class="transition duration-150 ease-in"
+      leave-active-class="transition duration-200 ease-in"
       leave-from-class="opacity-100"
       leave-to-class="opacity-0"
     >
       <div
         v-if="show && project"
-        class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-stone-950/80 backdrop-blur-sm"
+        class="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 overflow-y-auto bg-navy-950/80 backdrop-blur-sm"
         @click.self="emit('close')"
       >
         <div
-          class="relative w-full max-w-4xl bg-canvas-light dark:bg-canvas-dark border border-hairline-light dark:border-hairline-dark rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col"
+          class="relative w-full max-w-4xl bg-canvas-light dark:bg-canvas-dark border border-hairline-light dark:border-hairline-dark rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col transition-all duration-300 transform"
         >
           <!-- Top Header -->
           <div class="flex items-center justify-between px-6 py-4 border-b border-hairline-light dark:border-hairline-dark shrink-0">
             <div>
-              <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500">
+              <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400">
                 {{ project.category }} · {{ project.badge }}
               </span>
-              <h3 class="text-xl font-bold text-stone-950 dark:text-stone-50 tracking-editorial">
+              <h3 class="text-xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
                 {{ project.title }}
               </h3>
             </div>
             <button
               @click="emit('close')"
-              class="p-2 rounded-lg text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 hover:bg-stone-100 dark:hover:bg-stone-800 transition-colors"
+              class="p-2 rounded-lg text-navy-400 hover:text-navy-950 dark:hover:text-white hover:bg-navy-100/50 dark:hover:bg-navy-900/50 transition-colors"
               aria-label="Tutup"
             >
               <X class="w-5 h-5 stroke-[1.5]" />
@@ -107,7 +107,7 @@ onUnmounted(() => {
             <!-- Screenshots Frame -->
             <div
               v-if="project.screenshots && project.screenshots.length"
-              class="relative rounded-xl overflow-hidden bg-stone-950 border border-hairline-light dark:border-hairline-dark aspect-video flex items-center justify-center group"
+              class="relative rounded-xl overflow-hidden bg-navy-950 border border-hairline-light dark:border-hairline-dark aspect-video flex items-center justify-center group"
             >
               <img
                 :src="project.screenshots[currentSlide]"
@@ -122,14 +122,14 @@ onUnmounted(() => {
               >
                 <button
                   @click="prevSlide"
-                  class="p-2 rounded-full bg-stone-900/90 text-white hover:bg-stone-950 border border-stone-700"
+                  class="p-2 rounded-full bg-navy-900/90 text-white hover:bg-navy-950 border border-navy-700/80 transition-transform active:scale-95"
                   aria-label="Slide sebelumnya"
                 >
                   <ChevronLeft class="w-5 h-5 stroke-[1.5]" />
                 </button>
                 <button
                   @click="nextSlide"
-                  class="p-2 rounded-full bg-stone-900/90 text-white hover:bg-stone-950 border border-stone-700"
+                  class="p-2 rounded-full bg-navy-900/90 text-white hover:bg-navy-950 border border-navy-700/80 transition-transform active:scale-95"
                   aria-label="Slide berikutnya"
                 >
                   <ChevronRight class="w-5 h-5 stroke-[1.5]" />
@@ -157,8 +157,8 @@ onUnmounted(() => {
                 :class="[
                   'pb-3 border-b-2 transition-colors',
                   activeTab === 'client'
-                    ? 'border-stone-950 dark:border-stone-100 text-stone-950 dark:text-stone-100 font-medium'
-                    : 'border-transparent text-stone-400 hover:text-stone-700 dark:hover:text-stone-300'
+                    ? 'border-navy-900 dark:border-navy-100 text-navy-900 dark:text-navy-100 font-bold'
+                    : 'border-transparent text-navy-400 hover:text-navy-700 dark:hover:text-navy-300'
                 ]"
               >
                 [ 01 — Kebutuhan & Nilai Solusi ]
@@ -168,8 +168,8 @@ onUnmounted(() => {
                 :class="[
                   'pb-3 border-b-2 transition-colors',
                   activeTab === 'tech'
-                    ? 'border-stone-950 dark:border-stone-100 text-stone-950 dark:text-stone-100 font-medium'
-                    : 'border-transparent text-stone-400 hover:text-stone-700 dark:hover:text-stone-300'
+                    ? 'border-navy-900 dark:border-navy-100 text-navy-900 dark:text-navy-100 font-bold'
+                    : 'border-transparent text-navy-400 hover:text-navy-700 dark:hover:text-navy-300'
                 ]"
               >
                 [ 02 — Spesifikasi Arsitektur Teknis ]
@@ -177,47 +177,47 @@ onUnmounted(() => {
             </div>
 
             <!-- Tab 1: Client & Problem Statement -->
-            <div v-if="activeTab === 'client'" class="space-y-6">
+            <div v-if="activeTab === 'client'" class="space-y-6 animate-fade-in">
               <div class="space-y-1">
-                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                   Target Pengguna
                 </span>
-                <p class="text-sm text-stone-800 dark:text-stone-200">
+                <p class="text-sm text-navy-900 dark:text-navy-100">
                   {{ project.clientView.targetAudience }}
                 </p>
               </div>
 
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
-                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-2">
-                  <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-surface-light dark:bg-surface-dark space-y-2">
+                  <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                     Kendala Lapangan:
                   </span>
-                  <p class="text-stone-600 dark:text-stone-300">
+                  <p class="text-navy-700 dark:text-navy-300">
                     {{ project.clientView.problem }}
                   </p>
                 </div>
 
-                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-2">
-                  <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-surface-light dark:bg-surface-dark space-y-2">
+                  <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                     Solusi yang Diterapkan:
                   </span>
-                  <p class="text-stone-600 dark:text-stone-300">
+                  <p class="text-navy-700 dark:text-navy-300">
                     {{ project.clientView.solution }}
                   </p>
                 </div>
               </div>
 
               <div class="space-y-3">
-                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                   Manfaat Operasional Riil:
                 </span>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-stone-700 dark:text-stone-300">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-navy-800 dark:text-navy-200">
                   <div
                     v-for="benefit in project.clientView.keyBenefits"
                     :key="benefit"
                     class="flex items-start gap-2"
                   >
-                    <CheckCircle2 class="w-3.5 h-3.5 text-stone-900 dark:text-stone-100 shrink-0 mt-0.5 stroke-[1.5]" />
+                    <CheckCircle2 class="w-3.5 h-3.5 text-navy-900 dark:text-navy-100 shrink-0 mt-0.5 stroke-[1.5]" />
                     <span>{{ benefit }}</span>
                   </div>
                 </div>
@@ -225,42 +225,42 @@ onUnmounted(() => {
             </div>
 
             <!-- Tab 2: Technical Specs -->
-            <div v-else class="space-y-6">
+            <div v-else class="space-y-6 animate-fade-in">
               <div class="space-y-2">
-                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                   Tech Stack
                 </span>
                 <div class="flex flex-wrap gap-2">
                   <span
                     v-for="tech in project.techView.stack"
                     :key="tech"
-                    class="px-2.5 py-1 rounded-md text-xs font-mono border border-hairline-light dark:border-hairline-dark bg-stone-50 dark:bg-stone-900 text-stone-700 dark:text-stone-300"
+                    class="px-2.5 py-1 rounded-md text-xs font-mono border border-hairline-light dark:border-hairline-dark bg-surface-light dark:bg-surface-dark text-navy-800 dark:text-navy-200"
                   >
                     {{ tech }}
                   </span>
                 </div>
               </div>
 
-              <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-stone-50/70 dark:bg-stone-900/40 space-y-1.5">
-                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+              <div class="p-4 rounded-xl border border-hairline-light dark:border-hairline-dark bg-surface-light dark:bg-surface-dark space-y-1.5">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                   Pola Arsitektur
                 </span>
-                <p class="text-xs font-mono text-stone-700 dark:text-stone-300 leading-relaxed">
+                <p class="text-xs font-mono text-navy-800 dark:text-navy-200 leading-relaxed">
                   {{ project.techView.architecture }}
                 </p>
               </div>
 
               <div class="space-y-2">
-                <span class="font-mono text-[10px] uppercase tracking-caps text-stone-400 dark:text-stone-500 block">
+                <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400 block font-bold">
                   Highlight Rekayasa Teknis:
                 </span>
-                <ul class="space-y-1.5 text-xs text-stone-600 dark:text-stone-300">
+                <ul class="space-y-1.5 text-xs text-navy-700 dark:text-navy-300">
                   <li
                     v-for="point in project.techView.technicalHighlights"
                     :key="point"
                     class="flex items-start gap-2"
                   >
-                    <span class="text-stone-400 select-none font-mono">―</span>
+                    <span class="text-navy-400 select-none font-mono">―</span>
                     <span>{{ point }}</span>
                   </li>
                 </ul>
@@ -277,7 +277,7 @@ onUnmounted(() => {
                 :href="project.links.demo"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-stone-900 dark:text-stone-100 hover:opacity-70 transition-opacity underline underline-offset-4"
+                class="inline-flex items-center gap-1.5 text-navy-900 dark:text-navy-100 hover:text-navy-600 dark:hover:text-white transition-colors underline underline-offset-4"
               >
                 <span>Kunjungi Live Demo</span>
                 <ExternalLink class="w-3.5 h-3.5 stroke-[1.5]" />
@@ -288,7 +288,7 @@ onUnmounted(() => {
                 :href="project.links.github"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="inline-flex items-center gap-1.5 text-stone-500 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
+                class="inline-flex items-center gap-1.5 text-navy-500 hover:text-navy-950 dark:hover:text-white transition-colors"
               >
                 <IconGithub class="w-3.5 h-3.5" />
                 <span>Repositori GitHub</span>
@@ -297,7 +297,7 @@ onUnmounted(() => {
 
             <button
               @click="emit('close')"
-              class="text-stone-400 hover:text-stone-950 dark:hover:text-stone-100 transition-colors"
+              class="text-navy-400 hover:text-navy-950 dark:hover:text-white transition-colors"
             >
               Tutup [Esc]
             </button>

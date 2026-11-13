@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <div class="min-h-screen bg-canvas-light dark:bg-canvas-dark text-stone-900 dark:text-stone-100 font-sans antialiased transition-colors duration-200">
+  <div class="min-h-screen bg-canvas-light dark:bg-canvas-dark text-navy-900 dark:text-navy-100 font-sans antialiased transition-colors duration-300">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
