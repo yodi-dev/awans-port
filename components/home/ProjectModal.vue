@@ -80,6 +80,9 @@ onUnmounted(() => {
         @click.self="emit('close')"
       >
         <div
+          role="dialog"
+          aria-modal="true"
+          :aria-labelledby="`modal-title-${project.id}`"
           class="relative w-full max-w-4xl bg-canvas-light dark:bg-canvas-dark border border-hairline-light dark:border-hairline-dark rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col transition-all duration-300 transform"
         >
           <!-- Top Header -->
@@ -88,14 +91,15 @@ onUnmounted(() => {
               <span class="font-mono text-[10px] uppercase tracking-caps text-navy-500 dark:text-navy-400">
                 {{ project.category }} · {{ project.badge }}
               </span>
-              <h3 class="text-xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
+              <h3 :id="`modal-title-${project.id}`" class="text-xl font-bold text-navy-900 dark:text-navy-50 tracking-editorial">
                 {{ project.title }}
               </h3>
             </div>
             <button
               @click="emit('close')"
-              class="p-2 rounded-lg text-navy-400 hover:text-navy-950 dark:hover:text-white hover:bg-navy-100/50 dark:hover:bg-navy-900/50 transition-colors"
-              aria-label="Tutup"
+              type="button"
+              class="p-2 rounded-lg text-navy-400 hover:text-navy-950 dark:hover:text-white hover:bg-navy-100/50 dark:hover:bg-navy-900/50 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 dark:focus-visible:ring-linen-200"
+              aria-label="Tutup dialog"
             >
               <X class="w-5 h-5 stroke-[1.5]" />
             </button>
@@ -138,12 +142,14 @@ onUnmounted(() => {
 
               <!-- Slide Dots Indicator -->
               <div class="absolute bottom-3 inset-x-0 flex items-center justify-center gap-1.5">
-                <span
+                <button
                   v-for="(_, idx) in project.screenshots"
                   :key="idx"
+                  type="button"
                   @click="currentSlide = idx"
+                  :aria-label="`Buka slide ${idx + 1} dari ${project.screenshots.length}`"
                   :class="[
-                    'h-1.5 rounded-full cursor-pointer transition-all',
+                    'h-1.5 rounded-full cursor-pointer transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-white',
                     idx === currentSlide ? 'bg-white w-6' : 'bg-white/40 w-1.5 hover:bg-white/70'
                   ]"
                 />
@@ -290,7 +296,7 @@ onUnmounted(() => {
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 text-navy-500 hover:text-navy-950 dark:hover:text-white transition-colors"
               >
-                <IconGithub class="w-3.5 h-3.5" />
+                <IconGithub class="w-3.5 h-3.5 shrink-0" />
                 <span>Repositori GitHub</span>
               </a>
             </div>

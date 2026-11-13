@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem; /* Offsets sticky navbar (h-20 = 5rem + breathing room) for WCAG 2.2 focus visibility */
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -12,6 +13,17 @@
 
   body {
     @apply bg-canvas-light text-navy-900 dark:bg-canvas-dark dark:text-navy-100 transition-colors duration-300 selection:bg-navy-900 selection:text-white dark:selection:bg-navy-200 dark:selection:text-navy-950;
+  }
+
+  /* Universal accessible focus indicators for keyboard navigation (WCAG 2.2 AA) */
+  :focus-visible {
+    outline: 2px solid #1B2C45;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  .dark :focus-visible {
+    outline-color: #9DB2CE;
   }
 
   /* Refined, quiet scrollbar harmonized with #F8F4F3 & #0B111A */

@@ -68,7 +68,12 @@ const closeProjectModal = () => {
             <!-- Project Focal Preview (Large Canvas Frame with Subtle Zoom on Hover) -->
             <div
               @click="openProjectModal(project)"
-              class="mt-6 relative overflow-hidden rounded-2xl border border-hairline-light dark:border-hairline-dark bg-navy-950/5 dark:bg-navy-950/40 cursor-pointer shadow-sm hover:shadow-xl hover:border-navy-400/50 dark:hover:border-navy-600/50 transition-all duration-500 group/canvas"
+              @keydown.enter.prevent="openProjectModal(project)"
+              @keydown.space.prevent="openProjectModal(project)"
+              role="button"
+              tabindex="0"
+              :aria-label="`Buka galeri screenshot dan analisis sistem ${project.title}`"
+              class="mt-6 relative overflow-hidden rounded-2xl border border-hairline-light dark:border-hairline-dark bg-navy-950/5 dark:bg-navy-950/40 cursor-pointer shadow-sm hover:shadow-xl hover:border-navy-400/50 dark:hover:border-navy-600/50 transition-all duration-500 group/canvas focus:outline-none focus-visible:ring-2 focus-visible:ring-navy-600 dark:focus-visible:ring-linen-200"
             >
               <!-- Minimal Browser-Style Chrome Bar -->
               <div class="px-4 py-3 border-b border-hairline-light dark:border-hairline-dark bg-surface-light/80 dark:bg-surface-dark/80 flex items-center justify-between">
@@ -138,7 +143,7 @@ const closeProjectModal = () => {
                     rel="noopener noreferrer"
                     class="inline-flex items-center gap-1.5 text-navy-500 hover:text-navy-950 dark:hover:text-navy-100 transition-colors"
                   >
-                    <IconGithub class="w-3.5 h-3.5" />
+                    <IconGithub class="w-3.5 h-3.5 shrink-0" />
                     <span class="underline underline-offset-4">GitHub</span>
                   </a>
                 </div>
